@@ -8,27 +8,31 @@ function App() {
 
   return (
     <>
+    <BrowserRouter>
     <div className='app-container'>
     <nav className='navbar'>
       <h2>System</h2>
-      <BrowserRouter>
+
         <ul>
           <li><Link to="/sellers">Sellers</Link></li>
-          <li><Link to="/#">Placeholder</Link></li>
-          <li><Link to="/#">Placeholder</Link></li>
-          <li><Link to="/#">Placeholder</Link></li>
+          <li><Link to="/properties">Properties</Link></li>
+          <li><Link to="/buyers">Buyers</Link></li>
+          <li><Link to="/">Home</Link></li>
         </ul>
-        <Routes>
-          <Route path="/sellers" element={<Sellers/>}/>
-        </Routes>
-      </BrowserRouter>
-    </nav>
 
+
+    </nav>
+    <Routes>
+          <Route path="/sellers" element={<Sellers/>}/>
+          <Route path="/properties" element={<Sellers/>}/>
+          <Route path="/buyers" element={<Sellers/>}/>
+        </Routes>
     
 
     
 
     </div>
+    </BrowserRouter>
     </>
   )
 }
