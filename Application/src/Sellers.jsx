@@ -1,14 +1,24 @@
+import { useEffect, useState } from "react";
 
+let Sellers = () => {
 
-let Sellers = () =>{
+    const [sellers, setSellers] = useState([])
 
-    return(
-        <>
-        <br/>
-        Sellers Placeholder Text
-        </>
+    useEffect(() => {
+    fetch("http://localhost:3000/seller")
+      .then((response) => response.json())
+      .then((data) => setSellers(data));
+  }, []);
 
-    )
-
-}
-export default Sellers
+  return(
+   <>
+   <h3>Sellers Placeholder Text</h3>
+   {
+    sellers.map((seller) => <div>{seller.firstName}</div>)
+   }
+  
+  
+  </>
+  )
+};
+export default Sellers;
