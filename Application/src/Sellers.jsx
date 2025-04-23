@@ -22,7 +22,7 @@ let Sellers = () => {
                 <td>Seller Address</td>
                 <td>Seller Postcode</td>
                 <td>Seller Contact Number</td>
-                <td>View Seller's Properties</td>
+
             </tr>
             </thead>
             <tbody>
@@ -33,7 +33,7 @@ let Sellers = () => {
                 <td>{seller.address}</td>
                 <td>{seller.postcode}</td>
                 <td>{seller.phone}</td>
-                <td><Link>Properties</Link></td>
+
             </tr>
 
         

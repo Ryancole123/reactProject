@@ -26,6 +26,7 @@ function App() {
     </nav>
     <Routes>
           <Route path="/sellers" element={<Sellers/>}/>
+          <Route path="/sellers" element={<Sellers/>}/>
           <Route path="/properties" element={<Properties/>}/>
           <Route path="/buyers" element={<Buyers/>}/>
         </Routes>
