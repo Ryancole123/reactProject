@@ -16,20 +16,20 @@ let Buyers = () => {
         <table border = "1"> 
             <thead>
                 <tr>
-                    <td>Buyers Name</td>
-                    <td> Buyers Adress</td>
-                    <td> Buyers Postcode</td>
-                    <td> Buyers Contact Number</td>
+                    <td>Buyer Name</td>
+                    <td> Buyer Address</td>
+                    <td> Buyer Postcode</td>
+                    <td> Buyer Contact Number</td>
                     
                 </tr>
             </thead>
             <tbody>
              { Buyers.map((buyer) =>   
              <tr>
-                <td>{Buyers.surname}, {Buyers.firstName}</td>
-                <td>{Buyers.address}</td>
-                <td>{Buyers.postcode}</td>
-                <td>{Buyers.phone}</td>
+                <td>{buyer.surname}, {buyer.firstName}</td>
+                <td>{buyer.address}</td>
+                <td>{buyer.postcode}</td>
+                <td>{buyer.phone}</td>
              </tr>
              )}
             </tbody>
