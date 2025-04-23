@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SellerForm from "./SellerForm";
+import "./App.css"
 
 let Sellers = () => {
 
@@ -18,13 +19,13 @@ let Sellers = () => {
         <>
         <h3>List of our current sellers</h3>
         
-        <table border="1">
+        <table border="1"  className='data-table'>
             <thead>
             <tr>
-                <td><b>Seller Name</b></td>
-                <td><b>Seller Address</b></td>
-                <td><b>Seller Postcode</b></td>
-                <td><b>Seller Contact Number</b></td>
+                <th>Seller Name</th>
+                <th>Seller Address</th>
+                <th>Seller Postcode</th>
+                <th>Seller Contact Number</th>
 
             </tr>
             </thead>

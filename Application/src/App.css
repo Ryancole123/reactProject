@@ -39,3 +39,37 @@ nav ul li{
   align-items: end;  
 
 }
+
+.data-table {
+  overflow: auto;
+  width: 100%;
+}
+
+.data-table table {
+  border: 1px solid #dededf;
+  height: 100%;
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: left;
+}
+
+.data-table caption {
+  caption-side: top;
+  text-align: left;
+}
+
+.data-table th {
+  border: 1px solid #dededf;
+  background-color: #3aa9f2;
+  color: #000000;
+  padding: 5px;
+}
+
+.data-table td {
+  border: 1px solid #dededf;
+  background-color: #d4d4d4;
+  color: #000000;
+  padding: 5px;
+}

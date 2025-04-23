@@ -1,9 +1,15 @@
 import {useNavigate} from 'react-router-dom'
 
+
 let SellerForm = () =>{
     let navigate = useNavigate();
 
+
     function postToJSON(){
+        let firstNameField = document.getElementById("firstName").value
+        let surnameField = document.getElementById("surname").value
+        if(firstNameField.trim() !== '' && surnameField.trim() !== ''){
+        
         let data = {
             "firstName" : document.getElementById("firstName").value,
             "surname" : document.getElementById("surname").value,
@@ -26,8 +32,8 @@ let SellerForm = () =>{
         document.getElementById("postcode").value = ""
         document.getElementById("phoneNumber").value = ""
 
-        navigate("/sellers")
-
+        navigate("/sellers")}
+        else alert("Please ensure that at least the seller's names are entered")
     }
 
 
