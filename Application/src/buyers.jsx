@@ -12,7 +12,7 @@ let Buyers = () => {
        return(
         <>
         <h3> Buyers Placeholder Text</h3>
-        { Sellers.map((buyer) => <div>{buyer.firstName}</div>)
+        { Buyers.map((buyer) => <div>{buyer.firstName}</div>)
         }
 
         </>
