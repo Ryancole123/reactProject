@@ -18,5 +18,5 @@ let Buyers = () => {
         </>
        )
     };
-    Export default Buyers;
-    
+    export default Buyers;
+
