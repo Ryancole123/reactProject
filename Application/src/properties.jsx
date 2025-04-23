@@ -1,28 +1,35 @@
-import { useState } from "react"
-import { useParams } from "react-router-dom"
+import { useState,useEffect } from "react"
+// import { useParams } from "react-router-dom"
 const Properties = () => {
+    const [properties, setProperties] = useState([])
 
-    let { sid } = useParams()
+    useEffect(() => {
+        fetch("http://localhost:3000/property")
+            .then((response) => response.json())
+            .then((data) => setProperties(data));
+    }, []);
 
-    let [properties, setProperties] = useState([])
-    const processData = (ListProperties) => {
+    // let { sid } = useParams()
 
-        setProperties(ListProperties.filter((property) => property.sellerId == sid))
-    }
-    const processResponse = (response) => {
-        let responseObj1 = response.json()
-        responseObj1.then(processData)
-    }
-    const getProperties = () => {
+    // let [properties, setProperties] = useState([])
+    // const processData = (ListProperties) => {
 
-        let propertyObj1 = fetch("http://localhost:3000/property")
-        propertyObj1.then(processResponse)
-    }
+    //     setProperties(ListProperties.filter((property) => property.sellerId == sid))
+    // }
+    // const processResponse = (response) => {
+    //     let responseObj1 = response.json()
+    //     responseObj1.then(processData)
+    // }
+    // const getProperties = () => {
 
-    getProperties()
+    //     let propertyObj1 = fetch("http://localhost:3000/property")
+    //     propertyObj1.then(processResponse)
+    // }
+
+    // getProperties()
     return (
         <>
-            <h2> List Of Properties of :{sid}</h2>
+            <h2> List Of Properties of :</h2>
             {
                 properties.map((property) => <div>{property.address}</div>)
             }
