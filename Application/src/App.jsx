@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Sellers from './Sellers'
 import Buyers  from './buyers'
 import Properties from './properties'
+import SellerForm from './SellerForm'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/sellers" element={<Sellers/>}/>
           <Route path="/properties" element={<Properties/>}/>
           <Route path="/buyers" element={<Buyers/>}/>
+          <Route path="/create-new-seller" element={<SellerForm/>}/>
         </Routes>
     
 

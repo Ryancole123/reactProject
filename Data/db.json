@@ -6,7 +6,7 @@
       "address": "Sichuan, China",
       "postcode": "1131321",
       "phone": "",
-      "id": 1
+      "id": "1"
     },
     {
       "firstName": "Nicohola",
@@ -14,12 +14,44 @@
       "address": "Fairwater, Cardiff",
       "postcode": "CF1 1AA",
       "phone": "1234234",
-      "id": 2
+      "id": "2"
+    },
+    {
+      "id": "57cf",
+      "firstName": "Ryan",
+      "surname": "Cole",
+      "address": "XXX",
+      "postcode": "POR219",
+      "phone": "078412"
+    },
+    {
+      "id": "5581",
+      "firstName": "Paul",
+      "surname": "Blart",
+      "address": "Mall",
+      "postcode": "FY4 9DE",
+      "phone": "911"
+    },
+    {
+      "id": "e469",
+      "firstName": "Elyas",
+      "surname": "Musa",
+      "address": "HELLO",
+      "postcode": "HELLO",
+      "phone": ""
+    },
+    {
+      "id": "c303",
+      "firstName": "Test",
+      "surname": "Case",
+      "address": "AA",
+      "postcode": "BB",
+      "phone": "CC"
     }
   ],
   "property": [
     {
-      "id": 1,
+      "id": "1",
       "address": "34 OK Place, OK Town",
       "postcode": "OK1 1OK",
       "type": "DETACHED",
@@ -32,7 +64,7 @@
       "buyerId": 3
     },
     {
-      "id": 2,
+      "id": "2",
       "address": "Somewhere House, Some Street, Some City",
       "postcode": "SO1 2ME",
       "type": "APARTMENT",
@@ -54,7 +86,7 @@
       "garden": 1,
       "sellerId": 3,
       "status": "FOR SALE",
-      "id": 3
+      "id": "3"
     },
     {
       "address": "8 Hilltop, Ebbw Vale",
@@ -66,12 +98,12 @@
       "garden": 1,
       "sellerId": 4,
       "status": "SOLD",
-      "id": 4
+      "id": "4"
     }
   ],
   "buyer": [
     {
-      "id": 1,
+      "id": "1",
       "firstName": "Cookie",
       "surname": "Cat",
       "address": "42 Pen-y-lan Road, Cardiff",
@@ -79,7 +111,7 @@
       "phone": ""
     },
     {
-      "id": 2,
+      "id": "2",
       "firstName": "Nilla",
       "surname": "Cat",
       "address": "100 Magor Road, Newport",
@@ -92,7 +124,7 @@
       "address": "Very Rich Street, London",
       "postcode": "W1",
       "phone": "",
-      "id": 3
+      "id": "3"
     }
   ]
 }
