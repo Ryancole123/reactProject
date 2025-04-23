@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 let Sellers = () => {
 
@@ -13,9 +14,33 @@ let Sellers = () => {
     return(
         <>
         <h3>Sellers Placeholder Text</h3>
-        {
-        sellers.map((seller) => <div>{seller.firstName}</div>)
-        }
+        
+        <table border="1">
+            <thead>
+            <tr>
+                <td>Seller Name</td>
+                <td>Seller Address</td>
+                <td>Seller Postcode</td>
+                <td>Seller Contact Number</td>
+                <td>View Seller's Properties</td>
+            </tr>
+            </thead>
+            <tbody>
+        {sellers.map((seller) => 
+
+            <tr>
+                <td>{seller.surname}, {seller.firstName}</td>
+                <td>{seller.address}</td>
+                <td>{seller.postcode}</td>
+                <td>{seller.phone}</td>
+                <td><Link>Properties</Link></td>
+            </tr>
+
+        
+        )}
+        </tbody>
+        </table>
+        
 
 
         </>
