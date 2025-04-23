@@ -2,6 +2,7 @@
 import './App.css'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Sellers from './Sellers'
+import Buyers  from './buyers'
 
 function App() {
 
