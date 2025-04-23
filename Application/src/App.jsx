@@ -5,6 +5,7 @@ import Sellers from './Sellers'
 import Buyers  from './buyers'
 import Properties from './properties'
 import Register from './Register'
+import SellerForm from './SellerForm'
 
 function App() {
 
