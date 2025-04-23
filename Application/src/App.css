@@ -17,9 +17,9 @@ Responsive layout - makes the three columns stack on top of each other instead o
 } */
 
 .app-container{
-  display: flex;
-  justify-content: center;
-  border: 1px solid black;
-  width: 70%;
-  height: 70%;
+  width: 80vw;
+  margin: 50px auto;
+  height: 90vh;
+  padding: 20px, 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
