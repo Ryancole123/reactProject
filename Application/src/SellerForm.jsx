@@ -1,6 +1,7 @@
-
+import {useNavigate} from 'react-router-dom'
 
 let SellerForm = () =>{
+    let navigate = useNavigate();
 
     function postToJSON(){
         let data = {
@@ -25,7 +26,7 @@ let SellerForm = () =>{
         document.getElementById("postcode").value = ""
         document.getElementById("phoneNumber").value = ""
 
-
+        navigate("/sellers")
 
     }
 
