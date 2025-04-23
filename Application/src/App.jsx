@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Sellers from './Sellers'
 import Buyers  from './buyers'
 import Properties from './properties'
+import Register from './Register'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <li><Link to="/sellers">Sellers</Link></li>
           <li><Link to="/properties">Properties</Link></li>
           <li><Link to="/buyers">Buyers</Link></li>
+          <li><Link to="/register">register</Link></li>
           <li><Link to="/">Home</Link></li>
         </ul>
 
@@ -29,6 +31,7 @@ function App() {
           <Route path="/sellers" element={<Sellers/>}/>
           <Route path="/properties" element={<Properties/>}/>
           <Route path="/buyers" element={<Buyers/>}/>
+          <Route path="/register" element={<Register/>}/>
         </Routes>
     
 
