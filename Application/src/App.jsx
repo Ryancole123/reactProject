@@ -3,6 +3,7 @@ import './App.css'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Sellers from './Sellers'
 import Buyers  from './buyers'
+import Properties from './properties'
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
     </nav>
     <Routes>
           <Route path="/sellers" element={<Sellers/>}/>
-          <Route path="/properties" element={<Sellers/>}/>
+          <Route path="/properties" element={<Properties/>}/>
           <Route path="/buyers" element={<Buyers/>}/>
         </Routes>
     
