@@ -4,7 +4,8 @@ import "./properties.css"
 
 const Properties = () => {
     const [properties, setProperties] = useState([])
-        const hasGarden=(property)=>property ===1 
+    const hasGarden=(property)=>property ===1 
+
     useEffect(() => {
         fetch("http://localhost:3000/property")
             .then((response) => response.json())
@@ -15,29 +16,47 @@ const Properties = () => {
             <h2> List Of Properties of :</h2>
             
             {properties.map((property) => 
-                <div className="gridContainer"> 
-                <div className="gridChild">
-                <table>
-                    <thead>
-                        <tr>
-                            <td> Address </td>
-                            <td> Property Type </td>
-                            <td> Price </td>
-                            <td> No of Bedrooms </td>
-                            <td> No of Bathrooms </td>
-                            <td> Garden </td>
-                        </tr>
+                <div> 
                     
-                    </thead>
-                    <tr>
-                    <td> {property.address} </td>
-                        <td> {property.type} </td>
-                        <td> {property.price} </td>
-                        <td> {property.bedroom} </td>
-                        <td> {property.bathroom} </td>
-                        <td> {hasGarden(property.garden)?"Yes":"No"} </td>
-                    </tr>
-                </table>
+                <div className="properties-container">
+                
+                <img src="https://placehold.co/150x150" className="property-images" alt="" />
+                <span className="address-card-amenities">
+                    <table className="property-table">
+                        <tr>
+                            <td><img src={"../src/resources/bedrooms.png"} className="property-icons" alt="" /></td>
+                            <td>{property.bedroom}</td>
+                        </tr>
+                        <tr>
+                            <td><img className="property-icons" src={"../src/resources/bathrooms.png"} alt="" /></td>
+                            <td>{property.bathroom}</td>
+                        </tr>
+                        <tr>
+                            <td><img className="property-icons" src={"../src/resources/garden.png"} alt="" /></td>
+                            <td>{hasGarden(property.garden)?"Yes":"No"}</td>
+                        </tr>
+                    </table>
+                    
+                    
+                </span>
+                    
+                
+                
+
+            
+                
+                <div className="address-div">
+                    {property.address}
+                    <br/>
+                    {property.postcode}
+                    <br/>
+                    £{property.price}
+                    <br/>
+                    {property.type}
+                    <br/>
+                    {<b className="property-status">{property.status}</b>}
+                </div>
+
                 </div>
                 </div>
             )}
