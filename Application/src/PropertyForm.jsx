@@ -7,9 +7,9 @@ let PropertyForm = () => {
 
 
     function postToJSON() {
-        let gardenValue = document.getElementById("garden")
-       if (gardenValue === "Yes"){gardenValue=1}
-       else {gardenValue=0}
+
+
+            let gardenValue = document.getElementById("garden").value === "Yes" ? 1 : 0;
 
             let data = {
                 "address": document.getElementById("address").value,
@@ -106,8 +106,8 @@ let PropertyForm = () => {
                 </table>
                 <label htmlFor="garden">Garden</label>
                 <select name="garden" id="garden">
-                    <option value={parseInt ("1")}>Yes</option>
-                    <option value={0}>No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
                 </select>
                 <input type="button" value="Submit new seller" className='submit-button' onClick={postToJSON} />
 
