@@ -10,18 +10,20 @@ let PropertyForm = () => {
 
 
             let gardenValue = document.getElementById("garden").value === "Yes" ? 1 : 0;
+            let typeValue = document.getElementById("type").value
+            let statusValue = document.getElementById("status").value 
 
             let data = {
                 "address": document.getElementById("address").value,
                 "postcode": document.getElementById("postcode").value,
-                "type": document.getElementById("type").value,
+                "type": typeValue,
                 "price": document.getElementById("price").value,
                 "bedroom": document.getElementById("bedroom").value,
                 "bathroom": document.getElementById("bathroom").value,
                 "garden": gardenValue,
                 "seller": document.getElementById("seller").value,
                 "buyer": document.getElementById("buyer").value,
-                "status": document.getElementById("status").value,
+                "status": statusValue,
 
             }
 
@@ -66,8 +68,14 @@ let PropertyForm = () => {
 
 
                     <tr>
-                        <td>Type</td>
-                        <td><input type="text" required id="type" /></td>
+                        <td><label htmlFor="type">Property Type</label></td>
+                        <td> 
+                            <select name="type" id="type">
+                                <option value="DETACHED">DETACHED</option>
+                                <option value="SEMI-DETACHED">SEMI-DETACHED</option>
+                                <option value="APARTMENT">APARTMENT</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Price</td>
@@ -106,8 +114,13 @@ let PropertyForm = () => {
                     </tr>
 
                     <tr>
-                        <td>Status</td>
-                        <td><input type="text" id="status" /></td>
+                        <td><label htmlFor="status">Property Status</label></td>
+                        <td><select name="status" id="status">
+                            <option value="FOR SALE">FOR SALE</option>
+                            <option value="SOLD">SOLD</option>
+                            <option value="WITHDRAWN">WITHDRAWN</option>
+                        </select>
+                        </td>
                     </tr>
                 </table>
                 <br/>
