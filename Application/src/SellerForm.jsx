@@ -74,7 +74,7 @@ let SellerForm = () =>{
                 </tr>
                 <br />
             </table>
-            <input className= "inputfield" type="button" value="Submit new seller" className='submit-button' onClick={postToJSON}/>
+            <input  type="button" value="Submit new seller" className='submit-button' onClick={postToJSON}/>
     
         </form>
         </>
