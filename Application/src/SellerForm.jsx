@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom'
+import "./App.css"
 
 
 let SellerForm = () =>{
@@ -42,9 +43,9 @@ let SellerForm = () =>{
         <form>
             <table>
                 <tr>
-                    <td>First Name</td>
+                    <td>First Name<span className='asterisk'>*</span></td>
                     <td><input type="text" required id="firstName"/></td>
-                    <td>Surname</td>
+                    <td>Surname<span className='asterisk'>*</span></td>
                     <td><input type="text" required id="surname"/></td>
 
 

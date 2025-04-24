@@ -97,3 +97,7 @@ nav ul li{
 	position:relative;
 	top:1px;
 }
+
+.asterisk{
+  color: red;
+}
