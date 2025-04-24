@@ -165,6 +165,71 @@
       "seller": "1",
       "buyer": "1",
       "status": "FOR SALE"
+    },
+    {
+      "id": "f5ad",
+      "address": "",
+      "postcode": "",
+      "type": "SEMI-DETACHED",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": 1,
+      "seller": "",
+      "buyer": "",
+      "status": ""
+    },
+    {
+      "id": "9c57",
+      "address": "",
+      "postcode": "",
+      "type": "DETACHED",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": 1,
+      "seller": "",
+      "buyer": "",
+      "status": ""
+    },
+    {
+      "id": "7eb6",
+      "address": "",
+      "postcode": "",
+      "type": "APARTMENT",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": 1,
+      "seller": "",
+      "buyer": "",
+      "status": ""
+    },
+    {
+      "id": "2433",
+      "address": "",
+      "postcode": "",
+      "type": "APARTMENT",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": 1,
+      "seller": "",
+      "buyer": "",
+      "status": "FOR SALE"
+    },
+    {
+      "id": "4676",
+      "address": "76",
+      "postcode": "bb1 7gh",
+      "type": "SEMI-DETACHED",
+      "price": "120000",
+      "bedroom": "3",
+      "bathroom": "2",
+      "garden": 1,
+      "seller": "1",
+      "buyer": "",
+      "status": "WITHDRAWN"
     }
   ],
   "buyer": [
