@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react";
-// import{link} from "react-router-dom"
+import{Link} from "react-router-dom"
 
 let Buyers = () => {
     const [Buyers,setBuyers] = useState([])
@@ -33,7 +33,7 @@ let Buyers = () => {
                 <td>{buyer.phone}</td>
              </tr>
              )}
-             <input type="button"value= " Add new Buyer" onClick={<Buyers/>}/>
+             <Link to="/create-new-buyer"><input type="button" value="Add a new Buyer"/></Link>
             </tbody>
         </table>
          

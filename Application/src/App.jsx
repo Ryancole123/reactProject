@@ -21,7 +21,6 @@ function App() {
           <li><Link to="/sellers">Sellers</Link></li>
           <li><Link to="/properties">Properties</Link></li>
           <li><Link to="/buyers">Buyers</Link></li>
-          <li><Link to="/register">register</Link></li>
           <li><Link to="/">Home</Link></li>
         </ul>
 
@@ -32,8 +31,8 @@ function App() {
           <Route path="/sellers" element={<Sellers/>}/>
           <Route path="/properties" element={<Properties/>}/>
           <Route path="/buyers" element={<Buyers/>}/>
-          <Route path="/register" element={<Register/>}/>
           <Route path="/create-new-seller" element={<SellerForm/>}/>
+          <Route path="/create-new-buyer" element={<Register/>}/>
         </Routes>
     
 

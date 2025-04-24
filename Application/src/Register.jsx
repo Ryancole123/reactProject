@@ -9,8 +9,8 @@ let Register = ()=> {
             "firstName" : document.getElementById("firstName").value,
             "surname" : document.getElementById("surname").value,
             "address" : document.getElementById("address").value,
-            "postcode" : document.getElementById("posrcode").value,
-            "phone" : document.getElementById("phone").value,
+            "postcode" : document.getElementById("postcode").value,
+            "phone" : document.getElementById("phoneNumber").value,
         }
         const postObject = fetch('http://localhost:3000/buyer' ,{
             method:"POST",
@@ -54,7 +54,7 @@ let Register = ()=> {
 
                     
                     <td>PhoneNumber</td>
-                    <td><input type="number" required id="PhoneNumber"/></td>
+                    <td><input type="number" required id="phoneNumber"/></td>
                     </tr>
 
             </table>
