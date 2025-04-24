@@ -41,8 +41,7 @@ let PropertyForm = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
             })
-            postObject.then(() => console.log()
-            )
+            postObject.then(() => navigate("/properties"))
 
             document.getElementById("address").value = "";
             document.getElementById("postcode").value = "";
@@ -57,7 +56,7 @@ let PropertyForm = () => {
             document.getElementById("sellerId").value = "";
 
 
-            navigate("/properties");
+            //navigate("/properties");
         
         
     }

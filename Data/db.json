@@ -185,6 +185,34 @@
       "buyer": "",
       "status": "FOR SALE",
       "sellerId": "1"
+    },
+    {
+      "id": "07df",
+      "address": "",
+      "postcode": "",
+      "type": "DETACHED",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": 1,
+      "seller": "5581",
+      "buyer": "",
+      "status": "FOR SALE",
+      "sellerId": "5581"
+    },
+    {
+      "id": "5986",
+      "address": "",
+      "postcode": "",
+      "type": "DETACHED",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": 1,
+      "seller": "a5ff",
+      "buyer": "",
+      "status": "SOLD",
+      "sellerId": "a5ff"
     }
   ],
   "buyer": [
