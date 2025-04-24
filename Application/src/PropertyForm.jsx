@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react';
 
 
 let PropertyForm = () => {
-    let navigate = useNavigate();  
+ 
+
+    let navigate = useNavigate(); 
     const [sellers, setSellers] = useState([]);
 
     useEffect(() => {
@@ -14,7 +16,7 @@ let PropertyForm = () => {
 
     function postToJSON() {
 
-            let selectedSellerId = document.getElementById("seller")
+            let selectedSellerId = document.getElementById("seller").value
             let gardenValue = document.getElementById("garden").value === "Yes" ? 1 : 0;
             let typeValue = document.getElementById("type").value
             let statusValue = document.getElementById("status").value 
@@ -42,19 +44,20 @@ let PropertyForm = () => {
             postObject.then(() => console.log()
             )
 
-            document.getElementById("address").value = ""
-            document.getElementById("postcode").value = ""
-            document.getElementById("type").value = ""
-            document.getElementById("price").value = ""
-            document.getElementById("bedroom").value = ""
-            document.getElementById("bathroom").value = ""
-            document.getElementById("garden").value = ""
-            document.getElementById("seller").value = ""
-            document.getElementById("buyer").value = ""
-            document.getElementById("status").value = ""
-            document.getElementById("sellerId").value = ""
+            document.getElementById("address").value = "";
+            document.getElementById("postcode").value = "";
+            document.getElementById("type").value = "";
+            document.getElementById("price").value = "";
+            document.getElementById("bedroom").value = "";
+            document.getElementById("bathroom").value = "";
+            document.getElementById("garden").value = "";
+            document.getElementById("seller").value = "";
+            document.getElementById("buyer").value = "";
+            document.getElementById("status").value = "";
+            document.getElementById("sellerId").value = "";
 
-            navigate("/properties")
+
+            navigate("/properties");
         
         
     }

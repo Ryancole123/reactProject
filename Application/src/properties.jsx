@@ -21,7 +21,7 @@ const Properties = () => {
     }, []);
 
     function findSellerName(sellers,props){
-        let nameOfSeller = sellers.find((s) => parseInt(s.id) === props.sellerId)
+        let nameOfSeller = sellers.find((s) => s.id === props.sellerId)
             
         //console.log(nameOfSeller);
         return nameOfSeller ? `${nameOfSeller.firstName}  ${nameOfSeller.surname}` : "Unknown Seller"        
