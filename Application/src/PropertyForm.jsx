@@ -84,10 +84,16 @@ let PropertyForm = () => {
                         <td><input type="text" id="bathroom" /></td>
                     </tr>
 
-                    {/* <tr> */}
-                        {/* <td>Garden</td> */}
-                        {/* <td><input type="text" id="garden" /></td> */}
-                    {/* </tr> */}
+                    <tr>
+                    <td><label htmlFor="garden">Garden</label></td>
+                    <td>        
+                        <select name="garden" id="garden">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </td>
+
+                    </tr>
 
                     <tr>
                         <td>Seller</td>
@@ -104,12 +110,8 @@ let PropertyForm = () => {
                         <td><input type="text" id="status" /></td>
                     </tr>
                 </table>
-                <label htmlFor="garden">Garden</label>
-                <select name="garden" id="garden">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-                <input type="button" value="Submit new seller" className='submit-button' onClick={postToJSON} />
+                <br/>
+                <input type="button" value="Submit new property" className='submit-button' onClick={postToJSON} />
 
             </form>
         </>
