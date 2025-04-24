@@ -6,7 +6,7 @@ const Properties = () => {
     const [properties, setProperties] = useState([])
     const [seller, setSeller] = useState([])
     const hasGarden=(property)=>property ===1 
-    const placeholder = "placeholder";
+
 
     useEffect(() => {
         fetch("http://localhost:3000/property")
@@ -21,10 +21,10 @@ const Properties = () => {
     }, []);
 
     function findSellerName(sellers,props){
-        let nameOfSeller = sellers.filter((sellerById) => sellerById.id === props.sellerId)
-
-        console.log(nameOfSeller);
-        return `${nameOfSeller[0].firstName}  ${nameOfSeller[0].surname}`        
+        let nameOfSeller = sellers.find((s) => s.id === props.sellerId)
+            
+        //console.log(nameOfSeller);
+        return nameOfSeller ? `${nameOfSeller.firstName}  ${nameOfSeller.surname}` : "Unknown Seller"        
         
     }
 
@@ -75,7 +75,7 @@ const Properties = () => {
                     {<b className="property-status">{property.status}</b>}
                 </div>
                     <div className="more-prop-info">
-                        Property listed by {findSellerName(seller, properties)}
+                        Property listed by {findSellerName(seller, property)}
                     </div>
                 </div>
                 </div>
