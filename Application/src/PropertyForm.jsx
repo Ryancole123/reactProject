@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 let PropertyForm = () => {
     let navigate = useNavigate();
-     
+    
 
 
     function postToJSON() {
