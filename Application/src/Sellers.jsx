@@ -44,6 +44,7 @@ let Sellers = () => {
         )}
         <Link to="/create-new-seller"><input type="button" value="Add a new seller"/></Link>
         </tbody>
+        <br/>
         </table>
         
 

@@ -20,8 +20,10 @@ Responsive layout - makes the three columns stack on top of each other instead o
   border-radius: 25px;
   width: 80vw;
   margin: 50px auto;
-  height: 90vh;
-  padding: 20px, 20px;
+  margin-bottom: 100px ;
+  min-height: fit-content;
+  padding: 50px, 50px;
+  
   box-shadow: 0 4px 8px rgba(95, 158, 160);
 }
 
@@ -51,7 +53,7 @@ nav ul li {
   /* border: 2px solid rgba(95, 158, 160); */
   overflow: auto;
   width: 100%;
-  box-shadow: 0 8px 8px rgba(95, 158, 160);
+  /* box-shadow: 0 8px 8px rgba(95, 158, 160); */
 }
 
 .data-table table {
@@ -76,9 +78,9 @@ nav ul li {
   border-radius:25px;
   /* border: 1px solid #dededf; */
   background-color:rgba(95, 158, 160) ;
-  color: #000000;
+  /* color: #000000; */
   padding: 5px;
-  box-shadow: 0 8px 8px rgba(95, 158, 160)
+  /* box-shadow: 0 8px 8px rgba(95, 158, 160) */
   
 }
 
@@ -86,9 +88,10 @@ nav ul li {
   border-radius:25px;
   /* border: 1px solid rgba(95, 158, 160); */
   background-color: rgb(255, 255, 255);
-  color: #000000;
+  /* color: #000000; */
   padding: 5px;
-  box-shadow: 0 8px 8px rgba(95, 158, 160)
+  height: 15px;
+  /* box-shadow: 0 4px 8px rgba(95, 158, 160) */
 }
 
 .submit-button {
@@ -114,4 +117,15 @@ nav ul li {
   position:relative;
   top:1px;
 }
+.inputfield{ 
+  border-radius:25px;
 
+  /* border: 1px solid rgba(95, 158, 160); */
+  /* background-color: rgb(255, 255, 255); */
+  outline:none;
+  padding: 5px;
+  width: 87%;
+  /* box-shadow: 0 8px 8px rgba(95, 158, 160)
+}
+   */
+}

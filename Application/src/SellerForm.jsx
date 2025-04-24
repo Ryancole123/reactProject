@@ -48,9 +48,9 @@ let SellerForm = () =>{
                 <thead>
                 <tr>
                     <th>First Name<span className='asterisk'>*</span></th>
-                    <td><input type="text" required id="firstName"/></td>
+                    <td><input className= "inputfield" type="text" required id="firstName"/></td>
                     <th>Surname<span className='asterisk'>*</span></th>
-                    <td><input type="text" required id="surname"/></td>
+                    <td><input className= "inputfield" type="text" required id="surname"/></td>
 
 
                 </tr>
@@ -60,21 +60,21 @@ let SellerForm = () =>{
 
                 <tr>
                     <th>Address</th>
-                    <td><input type="text" required id="address"/></td>
+                    <td><input className= "inputfield" type="text" required id="address"/></td>
                 </tr>
                 <br />
                 <tr>
                     <th>Postcode</th>
-                    <td><input type="text" required id="postcode"/></td>
+                    <td><input className= "inputfield" type="text" required id="postcode"/></td>
                 </tr>
                 <br />
                 <tr>
                     <th>Phone number</th>
-                    <td><input type="text" id="phoneNumber"/></td>
+                    <td><input className= "inputfield" type="text" id="phoneNumber"/></td>
                 </tr>
                 <br />
             </table>
-            <input type="button" value="Submit new seller" className='submit-button' onClick={postToJSON}/>
+            <input className= "inputfield" type="button" value="Submit new seller" className='submit-button' onClick={postToJSON}/>
     
         </form>
         </>
