@@ -175,7 +175,7 @@
       "bedroom": "",
       "bathroom": "",
       "garden": 1,
-      "seller": "",
+      "seller": "1",
       "buyer": "",
       "status": ""
     },
@@ -188,7 +188,7 @@
       "bedroom": "",
       "bathroom": "",
       "garden": 1,
-      "seller": "",
+      "seller": "1",
       "buyer": "",
       "status": ""
     },
@@ -201,7 +201,7 @@
       "bedroom": "",
       "bathroom": "",
       "garden": 1,
-      "seller": "",
+      "seller": "1",
       "buyer": "",
       "status": ""
     },
@@ -214,7 +214,7 @@
       "bedroom": "",
       "bathroom": "",
       "garden": 1,
-      "seller": "",
+      "seller": "2",
       "buyer": "",
       "status": "FOR SALE"
     },

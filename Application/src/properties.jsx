@@ -4,13 +4,31 @@ import "./properties.css"
 
 const Properties = () => {
     const [properties, setProperties] = useState([])
+    const [seller, setSeller] = useState([])
     const hasGarden=(property)=>property ===1 
+    const placeholder = "placeholder";
 
     useEffect(() => {
         fetch("http://localhost:3000/property")
             .then((response) => response.json())
             .then((data) => setProperties(data));
     }, []);
+
+    useEffect(() => {
+        fetch("http://localhost:3000/seller")
+            .then((response) => response.json())
+            .then((data) => setSeller(data));
+    }, []);
+
+    function findSellerName(sellers,props){
+        let nameOfSeller = sellers.filter((sellerById) => sellerById.id === props.sellerId)
+
+        console.log(nameOfSeller);
+        return `${nameOfSeller[0].firstName}  ${nameOfSeller[0].surname}`        
+        
+    }
+
+
     return (
         <div>
             <h2> List Of Properties of :</h2>
@@ -56,7 +74,9 @@ const Properties = () => {
                     <br/>
                     {<b className="property-status">{property.status}</b>}
                 </div>
-
+                    <div className="more-prop-info">
+                        Property listed by {findSellerName(seller, properties)}
+                    </div>
                 </div>
                 </div>
             )}

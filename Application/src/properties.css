@@ -58,3 +58,9 @@
         color: red;
         font-weight: 1000;
 }
+
+.more-prop-info{
+        position: relative;
+        left: 300px;
+        top: -155px;
+}
