@@ -11,7 +11,7 @@ const Properties = () => {
     return (
         <div>
             <h2> List Of Properties of :</h2>
-            <table border="1">
+            <table border="1" className='data-table'>
                 <thead>
                     <tr>
                         <td> Address </td>

@@ -1,5 +1,7 @@
 import { useEffect,useState } from "react";
 import{Link} from "react-router-dom"
+import Register from "./Register";
+import "./App.css"
 
 let Buyers = () => {
     const [Buyers,setBuyers] = useState([])
@@ -12,15 +14,15 @@ let Buyers = () => {
 
        return(
         <>
-        <h3> Buyers Placeholder Text</h3>
+        <h3> List of our current buyers</h3>
 
-        <table border = "1"> 
+        <table border = "1"className= 'data-table'> 
             <thead>
                 <tr>
-                    <td>Buyer Name</td>
-                    <td> Buyer Address</td>
-                    <td> Buyer Postcode</td>
-                    <td> Buyer Contact Number</td>
+                    <th>Buyer Name</th>
+                    <th> Buyer Address</th>
+                    <th> Buyer Postcode</th>
+                    <th> Buyer Contact Number</th>
                     
                 </tr>
             </thead>
@@ -28,9 +30,11 @@ let Buyers = () => {
              { Buyers.map((buyer) =>   
              <tr>
                 <td>{buyer.surname}, {buyer.firstName}</td>
+               
                 <td>{buyer.address}</td>
-                <td>{buyer.postcode}</td>
+                 <td>{buyer.postcode}</td>
                 <td>{buyer.phone}</td>
+        
              </tr>
              )}
              <Link to="/create-new-buyer"><input type="button" value="Add a new Buyer"/></Link>

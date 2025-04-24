@@ -17,87 +17,101 @@ Responsive layout - makes the three columns stack on top of each other instead o
 } */
 
 .app-container{
+  border-radius: 25px;
   width: 80vw;
   margin: 50px auto;
   height: 90vh;
   padding: 20px, 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(95, 158, 160);
 }
 
 .navbar{
+  border-radius: 25px;
   height: 100px;
-  border-bottom: 1px solid black;
+  background-color: rgb(95, 158, 160);
+  /* border-bottom: 1px rgb(95, 158, 160); */
   display: flex;
+  box-shadow: 0 8px 8px rgba(95, 158, 160);
 }
 
-nav ul li{
+nav ul li {
   list-style: none;
   display: inline-block;
-  padding: 50px 10px;
+  padding: 50px 50px;
   align-items: end;
   justify-content: right;
-  align-items: end;  
+  align-items: end;
+  a{ color: #000000;}
+   
 
 }
 
 .data-table {
+  border-radius:25px;
+  /* border: 2px solid rgba(95, 158, 160); */
   overflow: auto;
   width: 100%;
+  box-shadow: 0 8px 8px rgba(95, 158, 160);
 }
 
 .data-table table {
-  border: 1px solid #dededf;
+  border-radius:25px;
+  /* border: 1px solid rgba(95, 158, 160); */
   height: 100%;
   width: 100%;
   table-layout: auto;
   border-collapse: collapse;
   border-spacing: 1px;
   text-align: left;
+  
 }
 
 .data-table caption {
+  border-radius:25px;
   caption-side: top;
   text-align: left;
 }
 
 .data-table th {
-  border: 1px solid #dededf;
-  background-color: #3aa9f2;
+  border-radius:25px;
+  /* border: 1px solid #dededf; */
+  background-color:rgba(95, 158, 160) ;
   color: #000000;
   padding: 5px;
+  box-shadow: 0 8px 8px rgba(95, 158, 160)
+  
 }
 
 .data-table td {
-  border: 1px solid #dededf;
-  background-color: #d4d4d4;
+  border-radius:25px;
+  /* border: 1px solid rgba(95, 158, 160); */
+  background-color: rgb(255, 255, 255);
   color: #000000;
   padding: 5px;
+  box-shadow: 0 8px 8px rgba(95, 158, 160)
 }
 
 .submit-button {
-	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
-	background-color:#44c767;
-	border-radius:29px;
-	border:2px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	font-weight:bold;
-	padding:11px 12px;
-	text-decoration:none;
-	text-shadow:0px 7px 6px #2f6627;
+  background:linear-gradient(to bottom, rgba(89, 156, 158, 0.693) 5%, rgba(95, 158, 160) 100%);
+  background-color:#44c767;
+  border-radius:25px;
+  border:2px solid #18ab29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:11px 12px;
+  text-decoration:none;
+  text-shadow:0px 7px 6px #2f6627;
 }
 .submit-button:hover {
-	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
-	background-color:#5cbf2a;
+  background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+  background-color:#5cbf2a;
 }
 .submit-button:active {
-	position:relative;
-	top:1px;
+  position:relative;
+  top:1px;
 }
 
-.asterisk{
-  color: red;
-}

@@ -39,33 +39,40 @@ let SellerForm = () =>{
 
 
     return(
+        
         <>
-        <form>
-            <table>
+        <br />
+        
+        <form className= 'data-table'>
+            <table className= 'data-table'>
+                <thead>
                 <tr>
-                    <td>First Name<span className='asterisk'>*</span></td>
+                    <th>First Name<span className='asterisk'>*</span></th>
                     <td><input type="text" required id="firstName"/></td>
-                    <td>Surname<span className='asterisk'>*</span></td>
+                    <th>Surname<span className='asterisk'>*</span></th>
                     <td><input type="text" required id="surname"/></td>
 
 
                 </tr>
+                </thead>
                 <br/>
 
 
                 <tr>
-                    <td>Address</td>
+                    <th>Address</th>
                     <td><input type="text" required id="address"/></td>
                 </tr>
+                <br />
                 <tr>
-                    <td>Postcode</td>
+                    <th>Postcode</th>
                     <td><input type="text" required id="postcode"/></td>
                 </tr>
-
+                <br />
                 <tr>
-                    <td>Phone number</td>
+                    <th>Phone number</th>
                     <td><input type="text" id="phoneNumber"/></td>
                 </tr>
+                <br />
             </table>
             <input type="button" value="Submit new seller" className='submit-button' onClick={postToJSON}/>
     
