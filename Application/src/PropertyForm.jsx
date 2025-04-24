@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 
 
 let PropertyForm = () => {
-    let navigate = useNavigate();
-    let matchedSeller;    
+    let navigate = useNavigate();  
     const [sellers, setSellers] = useState([]);
 
     useEffect(() => {
@@ -15,10 +14,7 @@ let PropertyForm = () => {
 
     function postToJSON() {
 
-            function sellerID(sellers){
-                matchedSeller.find((s) => s.firstName && s.surname)
-            }
-
+            let selectedSellerId = document.getElementById("seller")
             let gardenValue = document.getElementById("garden").value === "Yes" ? 1 : 0;
             let typeValue = document.getElementById("type").value
             let statusValue = document.getElementById("status").value 
@@ -34,7 +30,7 @@ let PropertyForm = () => {
                 "seller": document.getElementById("seller").value,
                 "buyer": document.getElementById("buyer").value,
                 "status": statusValue,
-                "sellerId": matchedSeller,
+                "sellerId": selectedSellerId,
 
             }
 
@@ -56,6 +52,7 @@ let PropertyForm = () => {
             document.getElementById("seller").value = ""
             document.getElementById("buyer").value = ""
             document.getElementById("status").value = ""
+            document.getElementById("sellerId").value = ""
 
             navigate("/properties")
         
@@ -119,7 +116,7 @@ let PropertyForm = () => {
                     <td>        
                         <select name="seller" id="seller">
                             {sellers.map((seller) => 
-                            <option key={seller.id} value={`${seller.firstName} ${seller.surname}`}>{`${seller.firstName} ${seller.surname}`}</option>
+                            <option key={seller.id} value={seller.id}>{`${seller.firstName} ${seller.surname}`}</option>
                             )}
                         </select>
                     </td>
