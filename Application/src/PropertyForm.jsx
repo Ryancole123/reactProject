@@ -1,13 +1,23 @@
 import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react';
 
 
 let PropertyForm = () => {
     let navigate = useNavigate();
-    
+    let matchedSeller;    
+    const [sellers, setSellers] = useState([]);
 
+    useEffect(() => {
+        fetch("http://localhost:3000/seller")
+        .then((response) => response.json())
+        .then((data) => setSellers(data));
+    }, []);
 
     function postToJSON() {
 
+            function sellerID(sellers){
+                matchedSeller.find((s) => s.firstName && s.surname)
+            }
 
             let gardenValue = document.getElementById("garden").value === "Yes" ? 1 : 0;
             let typeValue = document.getElementById("type").value
@@ -24,6 +34,7 @@ let PropertyForm = () => {
                 "seller": document.getElementById("seller").value,
                 "buyer": document.getElementById("buyer").value,
                 "status": statusValue,
+                "sellerId": matchedSeller,
 
             }
 
@@ -104,8 +115,21 @@ let PropertyForm = () => {
                     </tr>
 
                     <tr>
-                        <td>Seller</td>
-                        <td><input type="text" id="seller" /></td>
+                    <td><label htmlFor="seller">Seller</label></td>
+                    <td>        
+                        <select name="seller" id="seller">
+                            {sellers.map((seller) => 
+                            <option value={`${seller.firstName} ${seller.surname}`}>{`${seller.firstName} ${seller.surname}`}</option>
+                            )}
+                            {
+                                matchedSeller = sellers.find((s) => {
+                                    `${s.firstName} ${s.surname}` === document.getElementById("seller").value
+                                    matchedSeller = s.id
+                                })
+                            }
+                        </select>
+                    </td>
+
                     </tr>
 
                     <tr>

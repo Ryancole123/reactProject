@@ -230,6 +230,32 @@
       "seller": "1",
       "buyer": "",
       "status": "WITHDRAWN"
+    },
+    {
+      "id": "6ed2",
+      "address": "",
+      "postcode": "",
+      "type": "DETACHED",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": 1,
+      "seller": "Paul Blart",
+      "buyer": "",
+      "status": "FOR SALE"
+    },
+    {
+      "id": "d673",
+      "address": "X",
+      "postcode": "X",
+      "type": "DETACHED",
+      "price": "",
+      "bedroom": "",
+      "bathroom": "",
+      "garden": 1,
+      "seller": "Elyas Musa",
+      "buyer": "",
+      "status": "FOR SALE"
     }
   ],
   "buyer": [
