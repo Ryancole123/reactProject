@@ -119,14 +119,8 @@ let PropertyForm = () => {
                     <td>        
                         <select name="seller" id="seller">
                             {sellers.map((seller) => 
-                            <option value={`${seller.firstName} ${seller.surname}`}>{`${seller.firstName} ${seller.surname}`}</option>
+                            <option key={seller.id} value={`${seller.firstName} ${seller.surname}`}>{`${seller.firstName} ${seller.surname}`}</option>
                             )}
-                            {
-                                matchedSeller = sellers.find((s) => {
-                                    `${s.firstName} ${s.surname}` === document.getElementById("seller").value
-                                    matchedSeller = s.id
-                                })
-                            }
                         </select>
                     </td>
 
