@@ -66,7 +66,7 @@ let SellerForm = () =>{
                     <td><input type="text" id="phoneNumber"/></td>
                 </tr>
             </table>
-            <input type="button" value="Submit new seller" onClick={postToJSON}/>
+            <input type="button" value="Submit new seller" className='submit-button' onClick={postToJSON}/>
     
         </form>
         </>
