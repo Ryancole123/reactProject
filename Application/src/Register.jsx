@@ -1,44 +1,66 @@
 import { useState } from "react";
-import ReactDOM from "react-dom/client";
+import { useNavigate } from "react-router-dom";
 
-function MyForm() {
-  const [inputs, setInputs] = useState({});
+let Register = ()=> {
+    let navigate = useNavigate();
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
-  }
+    function postToJSON(){
+        let data = {
+            "firstName" : document.getElementById("firstName").value,
+            "surname" : document.getElementById("surname").value,
+            "address" : document.getElementById("address").value,
+            "postcode" : document.getElementById("posrcode").value,
+            "phone" : document.getElementById("phone").value,
+        }
+        const postObject = fetch('http://localhost:3000/buyer' ,{
+            method:"POST",
+            headers:{"content-type": "application/json"},
+            body:JSON.stringify(data)
+        })
+        postObject.then(()=> console.log()
+    )
+        document.getElementById("firstName").value = ""
+        document.getElementById("surname").value = ""
+        document.getElementById("address").value = ""
+        document.getElementById("postcode").value = ""
+        document.getElementById("phoneNumber").value = ""
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputs);
-  }
+        navigate("/buyers")
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>Enter your name:
-      <input 
-        type="text" 
-        name="username" 
-        value={inputs.username || ""} 
-        onChange={handleChange}
-      />
-      </label>
-      <label>Enter your age:
-        <input 
-          type="number" 
-          name="age" 
-          value={inputs.age || ""} 
-          onChange={handleChange}
-        />
-        </label>
-        <input type="submit" />
-    </form>
-  )
+    }
+
+    return(
+        <>
+        <form>
+            <table>
+                <tr>
+                    <td>Fist Name</td>
+                    <td><input type="text" required id="firstName" /></td>
+                    <td>Surname</td>
+                    <td><input type="text" required id="surname"/></td>
+                    
+
+                </tr>
+                <br/>
+                <tr>
+                <td>Address</td>
+                    <td><input type="text" required id="address"/></td>
+                </tr> 
+                <tr>
+                    <td>PostCode</td>
+                    <td><input type="text" required id="postcode"/></td>
+                    </tr>
+                    <tr>
+
+                    
+                    <td>PhoneNumber</td>
+                    <td><input type="number" required id="PhoneNumber"/></td>
+                    </tr>
+
+            </table>
+            <input type="button" value="Submit new Buyer" onClick={postToJSON} />
+        </form>
+        </>
+    ) 
 }
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<MyForm />);
-export default MyForm; 
+export default Register;

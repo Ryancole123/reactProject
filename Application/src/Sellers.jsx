@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SellerForm from "./SellerForm";
+import "./App.css"
 
 let Sellers = () => {
+
+    const isEmptyObj = (obj) => Object.keys(obj).length === 0;
 
     const [sellers, setSellers] = useState([])
 
@@ -13,15 +17,15 @@ let Sellers = () => {
 
     return(
         <>
-        <h3>Sellers Placeholder Text</h3>
+        <h3>List of our current sellers</h3>
         
-        <table border="1">
+        <table border="1"  className='data-table'>
             <thead>
             <tr>
-                <td>Seller Name</td>
-                <td>Seller Address</td>
-                <td>Seller Postcode</td>
-                <td>Seller Contact Number</td>
+                <th>Seller Name</th>
+                <th>Seller Address</th>
+                <th>Seller Postcode</th>
+                <th>Seller Contact Number</th>
 
             </tr>
             </thead>
@@ -29,15 +33,16 @@ let Sellers = () => {
         {sellers.map((seller) => 
 
             <tr>
-                <td>{seller.surname}, {seller.firstName}</td>
-                <td>{seller.address}</td>
-                <td>{seller.postcode}</td>
-                <td>{seller.phone}</td>
+                <td>{isEmptyObj(seller.surname)? "No data" : `${seller.surname}`}, {isEmptyObj(seller.firstName)? "No data" : `${seller.firstName}`}</td>
+                <td>{isEmptyObj(seller.address)? "No data" : `${seller.address}`}</td>
+                <td>{isEmptyObj(seller.postcode)? "No data" : `${seller.postcode}`}</td>
+                <td>{isEmptyObj(seller.phone)? "No data" : `${seller.phone}`}</td>
 
             </tr>
 
         
         )}
+        <Link to="/create-new-seller"><input type="button" value="Add a new seller"/></Link>
         </tbody>
         </table>
         
