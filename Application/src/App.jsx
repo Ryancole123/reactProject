@@ -5,6 +5,7 @@ import Sellers from './Sellers'
 import Buyers  from './buyers'
 import Properties from './properties'
 import Register from './Register'
+import SellerForm from './SellerForm'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/properties" element={<Properties/>}/>
           <Route path="/buyers" element={<Buyers/>}/>
           <Route path="/register" element={<Register/>}/>
+          <Route path="/create-new-seller" element={<SellerForm/>}/>
         </Routes>
     
 
