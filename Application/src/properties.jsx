@@ -21,27 +21,52 @@ const Properties = () => {
     }
 
     function changePropertyStatus(prop){
-        let data = prop;
-        if (prop.status === "FOR SALE"){
-            prop.status = "WITHDRAWN"
-            fetch(`http://localhost:3000/seller/${prop.id}`,{method:"DELETE"})
-            .then(console.log("done"))
+        // let data = prop;
+        // if (prop.status === "FOR SALE"){
+        //     prop.status = "WITHDRAWN"
+        //     fetch(`http://localhost:3000/seller/${prop.id}`,{method:"DELETE"})
+        //     .then(console.log("done"))
 
-            fetch("http://localhost:3000/property", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
-            })
-            //.then((resp) => console.log("done")
-            //)
+        //     fetch("http://localhost:3000/property", {
+        //         method: "POST",
+        //         headers: { "Content-Type": "application/json" },
+        //         body: JSON.stringify(data)
+        //     })
+        //     //.then((resp) => console.log("done")
+        //     //)
+        //     }else if(prop.status === "WITHDRAWN"){
+
+        //     }
+
+        const updatedProperty = {...prop};
+        if(prop.status === "FOR SALE"){
+            updatedProperty.status = "WITHDRAWN";
+        }else if(prop.status === "WITHDRAWN"){
+            updatedProperty.status = "FOR SALE";
+        }else{
+            return;
         }
+        fetch(`http://localhost:3000/seller/${prop.id}`,{
+            method: "PUT",
+            headers:{ "Content-Type": "application/json" },
+            body: JSON.stringify(updatedProperty),
+        })
+
+        .then((res) => {
+            if(res.ok){
+                setProperties((prev) => 
+                prev.map((p) =>
+                p.id === updatedProperty.id ? updatedProperty : p
+                ))
+            }
+        })
     }
 
     function withdrawFunction(prop){
         if(prop.status === "WITHDRAWN"){
-            return <input type="button" value="Resubmit this property" onClick={changePropertyStatus(prop)} />
+            return <input type="button" value="Resubmit this property" onClick={() => changePropertyStatus(prop)} />
         }else if(prop.status === "FOR SALE"){
-            return <input type="button" value="Withdraw this property"  onClick={changePropertyStatus(prop)}/>
+            return <input type="button" value="Withdraw this property"  onClick={() => changePropertyStatus(prop)}/>
         }
     }
 
