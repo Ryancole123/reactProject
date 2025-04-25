@@ -46,8 +46,10 @@ const Properties = () => {
         }else{
             return;
         }
+        console.log(updatedProperty);
+        
         fetch(`http://localhost:3000/property/${prop.id}`,{
-            method: "PUT",
+            method: "PATCH",
             headers:{ "Content-Type": "application/json" },
             body: JSON.stringify(updatedProperty),
         })
