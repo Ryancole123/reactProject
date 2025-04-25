@@ -176,7 +176,7 @@ const Properties = () => {
 
     // console.log(matchesTypeSelection);
     
-
+    //comment
     const filteredProperties = properties.filter(
         (property) =>
             matchesPriceSelection(property, price) &&
