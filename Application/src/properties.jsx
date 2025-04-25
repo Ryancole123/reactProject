@@ -23,7 +23,7 @@ const Properties = () => {
             return "WITHDRAWN"
         }else{return "SOLD"}
     }
-
+    // hello
     function changePropertyStatus(prop){
         const updatedProperty = {...prop};
         if(prop.status === "FOR SALE"){
