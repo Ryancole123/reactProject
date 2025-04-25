@@ -12,6 +12,39 @@ const Properties = () => {
     const [garden, setGarden] = useState("No garden preference")
     const hasGarden=(property)=>property ===1 
 
+    function statusColourCheck(e){
+        if(e.status === "FOR SALE"){
+            return "FOR-SALE"
+        }else if(e.status === "WITHDRAWN"){
+            return "WITHDRAWN"
+        }else{return "SOLD"}
+    }
+
+    function changePropertyStatus(prop){
+        let data = prop;
+        if (prop.status === "FOR SALE"){
+            prop.status = "WITHDRAWN"
+            fetch(`http://localhost:3000/seller/${prop.id}`,{method:"DELETE"})
+            .then(console.log("done"))
+
+            fetch("http://localhost:3000/property", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            //.then((resp) => console.log("done")
+            //)
+        }
+    }
+
+    function withdrawFunction(prop){
+        if(prop.status === "WITHDRAWN"){
+            return <input type="button" value="Resubmit this property" onClick={changePropertyStatus(prop)} />
+        }else if(prop.status === "FOR SALE"){
+            return <input type="button" value="Withdraw this property"  onClick={changePropertyStatus(prop)}/>
+        }
+    }
+
     function resetFilterValues(){
         setPrice("All prices")
         setType("All types")
@@ -255,10 +288,16 @@ const Properties = () => {
                     <br/>
                     {property.type}
                     <br/>
-                    {<b className="property-status">{property.status}</b>}
+                    {<b className={statusColourCheck(property)}>{property.status}</b>}
                 </div>
                     <div className="more-prop-info">
                         Property listed by {findSellerName(seller, property)}
+                        <br/>
+                        
+                        {withdrawFunction(property)}
+                            
+                        
+                        
                     </div>
                 </div>
                 </div>

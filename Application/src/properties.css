@@ -71,3 +71,15 @@
         left: 300px;
         top: -155px;
 }
+
+.SOLD{
+        color: red;
+}
+
+.FOR-SALE{
+        color: green;
+}
+
+.WITHDRAWN{
+        color: #ffbf00;
+}
