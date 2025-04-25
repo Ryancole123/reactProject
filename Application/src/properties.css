@@ -34,7 +34,7 @@
 .property-icons{
         height: 40px;
         vertical-align: top;
-        box-shadow: 0 4px 8px rgba(95, 158, 160);
+        /* box-shadow: 0 4px 8px rgba(95, 158, 160); */
 }
 
 .address-card-amenities{
@@ -83,3 +83,12 @@
 .WITHDRAWN{
         color: #ffbf00;
 }
+.dropdown{
+        border-radius:25px;
+        /* border: 2px solid rgba(95, 158, 160); */
+        overflow: auto;
+        width: 15%;
+        padding: 1px;
+        margin: 20px;
+        box-shadow: 0 8px 8px rgba(95, 158, 160);
+      }  

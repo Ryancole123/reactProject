@@ -164,7 +164,7 @@ const Properties = () => {
     }
 
     const matchesGardenSelection = (property, garden) =>{
-        switch(garden){
+        switch(garden){ 
             case "No garden preference":
                 return true
             case "Has a garden":
@@ -216,7 +216,7 @@ const Properties = () => {
             <h2> List Of Properties of :</h2>
             <Link to="/create-new-property"><input type="button" value="Add a new property"/></Link>
             <br/><br/>
-            <select name="price" id="price" onChange={handlePriceChange} value={price}>
+            <select name="price" id="price"  className='dropdown' onChange={handlePriceChange} value={price}>
                 <option>All prices</option>
                 <option>£100,000.00 - £149,999.99</option>
                 <option>£150,000.00 - £249,999.99</option>
@@ -224,14 +224,14 @@ const Properties = () => {
                 <option>£350,000.00 - No limit</option>
             </select>
 
-            <select name="type" id="type" onChange={handleTypeChange} value={type}>
+            <select name="type" id="type" className='dropdown' onChange={handleTypeChange} value={type}>
                 <option>All types</option>
                 <option>Detached</option>
                 <option>Semi-detached</option>
                 <option>Apartment</option>
             </select>
             
-            <select name="bedrooms" id="bedrooms" onChange={handleBedroomsChange} value={bedrooms}>
+            <select name="bedrooms" id="bedrooms" className='dropdown' onChange={handleBedroomsChange} value={bedrooms}>
                 <option>Any number of bedrooms</option>
                 <option>1</option>
                 <option>2</option>
@@ -242,7 +242,7 @@ const Properties = () => {
                 <option>7</option>
             </select>
 
-            <select name="bathrooms" id="bathrooms" onChange={handleBathroomsChange} value={bathrooms}>
+            <select name="bathrooms" id="bathrooms" className='dropdown' onChange={handleBathroomsChange} value={bathrooms}>
                 <option>Any number of bathrooms</option>
                 <option>1</option>
                 <option>2</option>
@@ -253,9 +253,9 @@ const Properties = () => {
                 <option>7</option>
             </select>
 
-            <br/>
+         
             
-            <select name="garden" id="garden" onChange={handleGardenChange} value={garden}>
+            <select name="garden" id="garden" className='dropdown' onChange={handleGardenChange} value={garden}>
                 <option>No garden preference</option>
                 <option>Has a garden</option>
                 <option>Has no garden</option>

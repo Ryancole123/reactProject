@@ -64,12 +64,13 @@ let PropertyForm = () => {
 
     return (
         <>
+        <br />
             <form>
-                <table>
+                <table className= 'data-table'>
                     <tr>
-                        <td>Address</td>
+                        <th>Address</th>
                         <td><input type="text" required id="address" /></td>
-                        <td>Postcode</td>
+                        <th>Postcode</th>
                         <td><input type="text" required id="postcode" /></td>
 
 
@@ -78,7 +79,7 @@ let PropertyForm = () => {
 
 
                     <tr>
-                        <td><label htmlFor="type">Property Type</label></td>
+                        <th><label htmlFor="type">Property Type</label></th>
                         <td> 
                             <select name="type" id="type">
                                 <option value="DETACHED">DETACHED</option>
@@ -86,35 +87,37 @@ let PropertyForm = () => {
                                 <option value="APARTMENT">APARTMENT</option>
                             </select>
                         </td>
+                        <br />
                     </tr>
+                    <br />
                     <tr>
-                        <td>Price</td>
+                        <th>Price</th>
                         <td><input type="text" required id="price" /></td>
                     </tr>
-
+                        <br />
                     <tr>
-                        <td>Bedroom</td>
+                        <th>Bedroom</th>
                         <td><input type="text" id="bedroom" /></td>
                     </tr>
-
+                        <br />
                     <tr>
-                        <td>Bathroom</td>
+                        <th>Bathroom</th>
                         <td><input type="text" id="bathroom" /></td>
                     </tr>
-
+                        <br />
                     <tr>
-                    <td><label htmlFor="garden">Garden</label></td>
+                    <th><label htmlFor="garden">Garden</label></th>
                     <td>        
                         <select name="garden" id="garden">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
                     </td>
-
+                        
                     </tr>
-
+                    <br />
                     <tr>
-                    <td><label htmlFor="seller">Seller</label></td>
+                    <th><label htmlFor="seller">Seller</label></th>
                     <td>        
                         <select name="seller" id="seller">
                             {sellers.map((seller) => 
@@ -124,14 +127,14 @@ let PropertyForm = () => {
                     </td>
 
                     </tr>
-
+                    <br />
                     <tr>
-                        <td>Buyer</td>
+                        <th>Buyer</th>
                         <td><input type="text" id="buyer" /></td>
                     </tr>
-
+                        <br />
                     <tr>
-                        <td><label htmlFor="status">Property Status</label></td>
+                        <th><label htmlFor="status">Property Status</label></th>
                         <td><select name="status" id="status">
                             <option value="FOR SALE">FOR SALE</option>
                             <option value="SOLD">SOLD</option>
@@ -139,6 +142,7 @@ let PropertyForm = () => {
                         </select>
                         </td>
                     </tr>
+                    <br />
                 </table>
                 <br/>
                 <input type="button" value="Submit new property" className='submit-button' onClick={postToJSON} />
