@@ -31,7 +31,7 @@ const Properties = () => {
 
     return (
         <div>
-            <h2> List Of Properties of :</h2>
+            <h2 className='headerline'> List of Properties of: </h2>
             
             {properties.map((property) => 
                 <div> 
@@ -80,7 +80,7 @@ const Properties = () => {
                 </div>
                 </div>
             )}
-            <Link to="/create-new-property"><input type="button" value="Add a new property"/></Link>
+            <Link to="/create-new-property"><input type="button" className='submit-button' value="Add a new property"/></Link>
             
         </div>
     )

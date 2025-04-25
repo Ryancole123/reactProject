@@ -14,7 +14,7 @@ let Buyers = () => {
 
        return(
         <>
-        <h3> List of our current buyers</h3>
+        <h3 className='headerline'> List of our current buyers</h3>
 
         <table border = "1"className= 'data-table'> 
             <thead>
