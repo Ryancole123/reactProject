@@ -46,7 +46,7 @@ const Properties = () => {
         }else{
             return;
         }
-        fetch(`http://localhost:3000/seller/${prop.id}`,{
+        fetch(`http://localhost:3000/property/${prop.id}`,{
             method: "PUT",
             headers:{ "Content-Type": "application/json" },
             body: JSON.stringify(updatedProperty),
