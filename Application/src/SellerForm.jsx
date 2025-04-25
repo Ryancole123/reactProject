@@ -41,6 +41,7 @@ let SellerForm = () =>{
     return(
         
         <>
+        <h2 className='headerline'> New Seller :</h2>
         <br />
         
         <form >
