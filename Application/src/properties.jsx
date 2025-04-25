@@ -12,6 +12,10 @@ const Properties = () => {
     const [garden, setGarden] = useState("No garden preference")
     const hasGarden=(property)=>property ===1 
 
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     function statusColourCheck(e){
         if(e.status === "FOR SALE"){
             return "FOR-SALE"
@@ -21,23 +25,6 @@ const Properties = () => {
     }
 
     function changePropertyStatus(prop){
-        // let data = prop;
-        // if (prop.status === "FOR SALE"){
-        //     prop.status = "WITHDRAWN"
-        //     fetch(`http://localhost:3000/seller/${prop.id}`,{method:"DELETE"})
-        //     .then(console.log("done"))
-
-        //     fetch("http://localhost:3000/property", {
-        //         method: "POST",
-        //         headers: { "Content-Type": "application/json" },
-        //         body: JSON.stringify(data)
-        //     })
-        //     //.then((resp) => console.log("done")
-        //     //)
-        //     }else if(prop.status === "WITHDRAWN"){
-
-        //     }
-
         const updatedProperty = {...prop};
         if(prop.status === "FOR SALE"){
             updatedProperty.status = "WITHDRAWN";
@@ -311,7 +298,7 @@ const Properties = () => {
                     <br/>
                     {property.postcode}
                     <br/>
-                    £{property.price}
+                    £{numberWithCommas(property.price)}
                     <br/>
                     {property.type}
                     <br/>
