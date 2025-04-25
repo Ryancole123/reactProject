@@ -43,7 +43,7 @@ let SellerForm = () =>{
         <>
         <br />
         
-        <form className= 'data-table'>
+        <form >
             <table className= 'data-table'>
                 <thead>
                 <tr>

@@ -29,37 +29,45 @@ let Register = ()=> {
     }
 
     return(
+        
         <>
-        <form>
-            <table>
+        <br />
+        
+        <form >
+            <table className= 'data-table'>
+                <thead>
                 <tr>
-                    <td>Fist Name</td>
-                    <td><input type="text" required id="firstName" /></td>
-                    <td>Surname</td>
-                    <td><input type="text" required id="surname"/></td>
-                    
+                    <th>First Name<span className='asterisk'>*</span></th>
+                    <td><input className= "inputfield" type="text" required id="firstName"/></td>
+                    <th>Surname<span className='asterisk'>*</span></th>
+                    <td><input className= "inputfield" type="text" required id="surname"/></td>
+
 
                 </tr>
+                </thead>
                 <br/>
-                <tr>
-                <td>Address</td>
-                    <td><input type="text" required id="address"/></td>
-                </tr> 
-                <tr>
-                    <td>PostCode</td>
-                    <td><input type="text" required id="postcode"/></td>
-                    </tr>
-                    <tr>
 
-                    
-                    <td>PhoneNumber</td>
-                    <td><input type="number" required id="phoneNumber"/></td>
-                    </tr>
 
+                <tr>
+                    <th>Address</th>
+                    <td><input className= "inputfield" type="text" required id="address"/></td>
+                </tr>
+                <br />
+                <tr>
+                    <th>Postcode</th>
+                    <td><input className= "inputfield" type="text" required id="postcode"/></td>
+                </tr>
+                <br />
+                <tr>
+                    <th>Phone number</th>
+                    <td><input className= "inputfield" type="text" id="phoneNumber"/></td>
+                </tr>
+                <br />
             </table>
-            <input type="button" value="Submit new Buyer" onClick={postToJSON} />
+            <input  type="button" value="Submit new seller" className='submit-button' onClick={postToJSON}/>
+    
         </form>
         </>
-    ) 
+    )
 }
 export default Register;
