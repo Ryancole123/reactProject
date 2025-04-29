@@ -1,5 +1,9 @@
 import { useState,useEffect } from "react"
 import { Link } from "react-router-dom"
+import detachedImage from "../src/resources/detached.jpg";
+import semiDetachedImage from "../src/resources/semi-detached.jpg";
+import apartmentImage from "../src/resources/apartment.jpg";
+import defaultPropertyImage from "../src/resources/default-property.jpg";
 import "./properties.css"
 
 const Properties = () => {
@@ -11,8 +15,20 @@ const Properties = () => {
     const [bathrooms, setBathrooms] = useState("Any number of bathrooms")
     const [garden, setGarden] = useState("No garden preference")
     const hasGarden=(property)=>property ===1 
+    const getPropertyImage = (propertyType)=> {const typeUpper = String(propertyType).toUpperCase();
 
-    function numberWithCommas(x) {
+    switch (typeUpper){
+        case "DETACHED":
+            return detachedImage;
+        case "SEMI-DETACHED":
+            return semiDetachedImage;
+        case "APARTMENT":
+            return apartmentImage;
+        default:
+            return defaultPropertyImage;
+    }
+};
+        function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
@@ -268,7 +284,11 @@ const Properties = () => {
                     
                 <div className="properties-container">
                 
-                <img src="https://placehold.co/150x150" className="property-images" alt="" />
+                <img 
+                    src={getPropertyImage(property.type)}
+                    className="property-images"
+                    alt={`${property.type || "Property"} at ${property.address}`} 
+                />
                 <span className="address-card-amenities">
                     <table className="property-table">
                         <tr>
