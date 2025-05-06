@@ -15,7 +15,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <div className='app-container'>
+    
     <nav className='navbar'>
 
       <h3>Home Sweet Home</h3>
@@ -30,6 +30,7 @@ function App() {
 
 
     </nav>
+    <div className='app-container'>
     <Routes>
           <Route path="/sellers" element={<Sellers/>}/>
           <Route path="/sellers" element={<Sellers/>}/>
