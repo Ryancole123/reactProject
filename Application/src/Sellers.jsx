@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import SellerForm from "./SellerForm";
 import "./App.css"
+import SellerModalForm from "./SellerModalForm";
+import { Button } from "react-bootstrap"
 
 let Sellers = () => {
 
     const isEmptyObj = (obj) => Object.keys(obj).length === 0;
 
+    const [showModal, setShowModal] = useState(false);
     const [sellers, setSellers] = useState([])
 
     useEffect(() => {
@@ -15,11 +16,24 @@ let Sellers = () => {
     .then((data) => setSellers(data));
 }, []);
 
+
+const fetchSellers = () => {
+    fetch("http://localhost:3000/seller")
+        .then((response) => response.json())
+        .then((data) => setSellers(data));
+};
+
+    useEffect(() => {
+        fetchSellers();
+    }, []);
+
+
+    //Comment test
     return(
         <>
         <h3 className='headerline'>List of our current sellers:</h3>
         
-        <table border="1"  className='data-table'>
+        <table  className='data-table'>
             <thead>
             <tr>
                 <th>Seller Name</th>
@@ -42,7 +56,13 @@ let Sellers = () => {
 
         
         )}
-        <Link to="/create-new-seller"><input type="button" className='submit-button' value="Add a new seller"/></Link>
+        {/* <Link to="/create-new-seller"><input type="button" className='submit-button' value="Add a new seller"/></Link> */}
+        <br/>
+        <SellerModalForm 
+            show={showModal} 
+            handleClose={() => setShowModal(false)}
+            onSellerAdded={fetchSellers} />
+            <Button onClick={() => setShowModal(true)}>Add a new seller</Button>
         </tbody>
         
         </table>
