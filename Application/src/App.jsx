@@ -17,13 +17,15 @@ function App() {
     <BrowserRouter>
     <div className='app-container'>
     <nav className='navbar'>
-      <h2>Estate agent system</h2>
+
+      <h3>Home Sweet Home</h3>
+
 
         <ul>
+          <li><Link to="/">Home</Link></li>
           <li><Link to="/sellers">Sellers</Link></li>
           <li><Link to="/properties">Properties</Link></li>
           <li><Link to="/buyers">Buyers</Link></li>
-          <li><Link to="/">Home</Link></li>
         </ul>
 
 
