@@ -229,8 +229,8 @@ const Properties = () => {
 
     return (
         <div>
-            <h2> List Of Properties of :</h2>
-            <Link to="/create-new-property"><input type="button" value="Add a new property"/></Link>
+            <h2 className='headerline'> List Of Properties of :</h2>
+            <Link to="/create-new-property"><input type="button" className='submit-button' value="Add a new property"/></Link>
             <br/><br/>
             <select name="price" id="price"  className='dropdown' onChange={handlePriceChange} value={price}>
                 <option>All prices</option>
@@ -277,11 +277,11 @@ const Properties = () => {
                 <option>Has no garden</option>
             </select>
 
-            <input type="button" value="Reset filter values" onClick={resetFilterValues}/>
+            <input type="button" className='submit-button' value="Reset filter values" onClick={resetFilterValues}/>
 
             {filteredProperties.map((property) => 
                 <div> 
-                    
+                    <br />
                 <div className="properties-container">
                 
                 <img 

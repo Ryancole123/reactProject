@@ -31,6 +31,7 @@ let Register = ()=> {
     return(
         
         <>
+        <h2 className='headerline'> New Buyer:</h2>
         <br />
         
         <form >
