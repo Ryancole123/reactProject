@@ -7,6 +7,7 @@ import Properties from './properties'
 import Register from './Register'
 import SellerForm from './SellerForm'
 import PropertyForm from './PropertyForm'
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
 
@@ -16,7 +17,9 @@ function App() {
     <BrowserRouter>
     <div className='app-container'>
     <nav className='navbar'>
+
       <h3>Home Sweet Home</h3>
+
 
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -42,6 +45,9 @@ function App() {
 
     </div>
     </BrowserRouter>
+
+
+
     </>
   )
 }

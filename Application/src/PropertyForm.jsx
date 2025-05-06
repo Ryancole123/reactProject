@@ -1,157 +1,151 @@
-import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Modal, Button, Form } from 'react-bootstrap';
 
 
-let PropertyForm = () => {
- 
+function PropertyModalForm({ show, handleClose, onPropertyAdded }) {
+  const navigate = useNavigate();
+  const [sellers, setSellers] = useState([]);
 
-    let navigate = useNavigate(); 
-    const [sellers, setSellers] = useState([]);
+  const [form, setForm] = useState({
+    address: '',
+    postcode: '',
+    type: 'DETACHED',
+    price: '',
+    bedroom: '',
+    bathroom: '',
+    garden: 'Yes',
+    seller: '',
+    buyer: '',
+    status: 'FOR SALE',
+  });
 
-    useEffect(() => {
-        fetch("http://localhost:3000/seller")
-        .then((response) => response.json())
-        .then((data) => setSellers(data));
-    }, []);
+  useEffect(() => {
+    fetch("http://localhost:3000/seller")
+      .then((res) => res.json())
+      .then((data) => setSellers(data));
+  }, []);
 
-    function postToJSON() {
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setForm(prev => ({ ...prev, [id]: value }));
+  };
 
-            let selectedSellerId = document.getElementById("seller").value
-            let gardenValue = document.getElementById("garden").value === "Yes" ? 1 : 0;
-            let typeValue = document.getElementById("type").value
-            let statusValue = document.getElementById("status").value 
+  const postToJSON = () => {
+    const gardenValue = form.garden === "Yes" ? 1 : 0;
+  
+    const data = {
+      ...form,
+      price: parseInt(form.price),
+      bedroom: parseInt(form.bedroom),
+      bathroom: parseInt(form.bathroom),
+      garden: gardenValue,
+      sellerId: form.seller,
+    };
 
-            let data = {
-                "address": document.getElementById("address").value,
-                "postcode": document.getElementById("postcode").value,
-                "type": typeValue,
-                "price": parseInt(document.getElementById("price").value),
-                "bedroom": parseInt(document.getElementById("bedroom").value),
-                "bathroom": parseInt(document.getElementById("bathroom").value),
-                "garden": gardenValue,
-                "seller": document.getElementById("seller").value,
-                "buyer": document.getElementById("buyer").value,
-                "status": statusValue,
-                "sellerId": selectedSellerId,
-
+    
+    fetch("http://localhost:3000/property", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+        .then((res) => {
+          if (res.ok) {
+            if (onPropertyAdded) {
+              onPropertyAdded(); 
             }
+            setForm({
+                address: '',
+                postcode: '',
+                type: 'DETACHED',
+                price: '',
+                bedroom: '',
+                bathroom: '',
+                garden: 'Yes',
+                seller: '',
+                buyer: '',
+                status: 'FOR SALE',
+              });
+            handleClose();      
+            navigate("/properties");
+          } else {
+            console.error("Failed to add property");
+          }
+        })
+        .catch((err) => console.error("Error:", err));
+      
+  };
 
-            const postObject = fetch("http://localhost:3000/property", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
-            })
-            postObject.then(() => navigate("/properties"))
-
-            document.getElementById("address").value = "";
-            document.getElementById("postcode").value = "";
-            document.getElementById("type").value = "";
-            document.getElementById("price").value = "";
-            document.getElementById("bedroom").value = "";
-            document.getElementById("bathroom").value = "";
-            document.getElementById("garden").value = "";
-            document.getElementById("seller").value = "";
-            document.getElementById("buyer").value = "";
-            document.getElementById("status").value = "";
-            document.getElementById("sellerId").value = "";
-
-
-            //navigate("/properties");
-        
-        
-    }
-
-
-    return (
-        <>
-        <h2 className='headerline'> New Property:</h2>
-        <br />
-            <form>
-                <table className= 'data-table'>
-                    <tr className= 'data-table'>
-                        <th>Address</th>
-                        <td><input type="text" className= "inputfield" required id="address" /></td>
-                        <th>Postcode</th>
-                        <td><input type="text" className= "inputfield" required id="postcode" /></td>
-
-
-                    </tr>
-                    <br />
-
-
-                    <tr >
-                        <th><label htmlFor="type">Property Type</label></th>
-                        <td> 
-                            <select name="type" id="type" className= "inputfield">
-                                <option value="DETACHED">DETACHED</option>
-                                <option value="SEMI-DETACHED">SEMI-DETACHED</option>
-                                <option value="APARTMENT">APARTMENT</option>
-                            </select>
-                        </td>
-                        <br />
-                    </tr>
-                    <br />
-                    <tr>
-                        <th>Price</th>
-                        <td><input type="text" className= "inputfield" required id="price" /></td>
-                    </tr>
-                        <br />
-                    <tr>
-                        <th>Bedroom</th>
-                        <td><input type="text"  className= "inputfield" id="bedroom" /></td>
-                    </tr>
-                        <br />
-                    <tr>
-                        <th>Bathroom</th>
-                        <td><input type="text" id="bathroom" className= "inputfield" /></td>
-                    </tr>
-                        <br />
-                    <tr>
-                    <th><label htmlFor="garden">Garden</label></th>
-                    <td>        
-                        <select name="garden" id="garden"className= "inputfield">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </td>
-                        
-                    </tr>
-                    <br />
-                    <tr>
-                    <th><label htmlFor="seller">Seller</label></th>
-                    <td>        
-                        <select  className= "inputfield" name="seller" id="seller">
-                            {sellers.map((seller) => 
-                            <option key={seller.id} value={seller.id}>{`${seller.firstName} ${seller.surname}`}</option>
-                            )}
-                        </select>
-                    </td>
-
-                    </tr>
-                    <br />
-                    <tr>
-                        <th>Buyer</th>
-                        <td><input type="text" className= "inputfield" id="buyer" /></td>
-                    </tr>
-                        <br />
-                    <tr>
-                        <th><label htmlFor="status">Property Status</label></th>
-                        <td><select name="status" className= "inputfield" id="status">
-                            <option value="FOR SALE">FOR SALE</option>
-                            <option value="SOLD">SOLD</option>
-                            <option value="WITHDRAWN">WITHDRAWN</option>
-                        </select>
-                        </td>
-                    </tr>
-                    <br />
-                </table>
-                <br/>
-                <input type="button" value="Submit new property" className='submit-button' onClick={postToJSON} />
-
-            </form>
-        </>
-    )
-
+  return (
+    <Modal show={show} onHide={handleClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>New Property</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+          <Form.Group>
+            <Form.Label>Address</Form.Label>
+            <Form.Control id="address" value={form.address} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Postcode</Form.Label>
+            <Form.Control id="postcode" value={form.postcode} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Type</Form.Label>
+            <Form.Select id="type" value={form.type} onChange={handleChange}>
+              <option value="DETACHED">DETACHED</option>
+              <option value="SEMI-DETACHED">SEMI-DETACHED</option>
+              <option value="APARTMENT">APARTMENT</option>
+            </Form.Select>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Price</Form.Label>
+            <Form.Control id="price" type="number" value={form.price} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Bedroom</Form.Label>
+            <Form.Control id="bedroom" type="number" value={form.bedroom} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Bathroom</Form.Label>
+            <Form.Control id="bathroom" type="number" value={form.bathroom} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Garden</Form.Label>
+            <Form.Select id="garden" value={form.garden} onChange={handleChange}>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </Form.Select>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Seller</Form.Label>
+            <Form.Select id="seller" value={form.seller} onChange={handleChange}>
+              {sellers.map((s) => (
+                <option key={s.id} value={s.id}>{`${s.firstName} ${s.surname}`}</option>
+              ))}
+            </Form.Select>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Buyer</Form.Label>
+            <Form.Control id="buyer" value={form.buyer} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Status</Form.Label>
+            <Form.Select id="status" value={form.status} onChange={handleChange}>
+              <option value="FOR SALE">FOR SALE</option>
+              <option value="SOLD">SOLD</option>
+              <option value="WITHDRAWN">WITHDRAWN</option>
+            </Form.Select>
+          </Form.Group>
+        </Form>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+        <Button variant="primary" onClick={postToJSON}>Submit</Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
-export default PropertyForm
+export default PropertyModalForm;
