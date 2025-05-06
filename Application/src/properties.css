@@ -21,6 +21,9 @@
         border: 1px solid black;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(95, 158, 160);
+        transition: transform 750ms ease-in-out;
+        background-color: white;
+
 }
 
 .properties-container thead,tr,td{
@@ -30,6 +33,14 @@
         ;
 } */
 
+
+.properties-container:hover{
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(95, 158, 160);
+        transition: 500ms;
+
+
+}
 
 .property-icons{
         height: 40px;

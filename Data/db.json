@@ -283,6 +283,20 @@
       "buyer": "",
       "status": "FOR SALE",
       "sellerId": "57cf"
+    },
+    {
+      "id": "fc69",
+      "address": "hello there",
+      "postcode": "SA1 1AA",
+      "type": "SEMI-DETACHED",
+      "price": 500000,
+      "bedroom": 3,
+      "bathroom": 4,
+      "garden": 1,
+      "seller": "5581",
+      "buyer": "",
+      "status": "FOR SALE",
+      "sellerId": "5581"
     }
   ],
   "buyer": [
