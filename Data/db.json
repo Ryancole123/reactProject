@@ -297,6 +297,20 @@
       "buyer": "",
       "status": "FOR SALE",
       "sellerId": "5581"
+    },
+    {
+      "id": "e027",
+      "address": "X",
+      "postcode": "Y",
+      "type": "APARTMENT",
+      "price": 400000,
+      "bedroom": 3,
+      "bathroom": 2,
+      "garden": 0,
+      "seller": "57cf",
+      "buyer": "",
+      "status": "FOR SALE",
+      "sellerId": "57cf"
     }
   ],
   "buyer": [
