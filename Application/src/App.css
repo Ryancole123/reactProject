@@ -16,6 +16,8 @@ Responsive layout - makes the three columns stack on top of each other instead o
   }
 } */
 
+
+
 .app-container{
   border-radius: 25px;
   width: 80vw;
@@ -32,26 +34,51 @@ Responsive layout - makes the three columns stack on top of each other instead o
 .navbar{
   border-radius: 25px;
   height: 100px;
-  background-color: rgb(95, 158, 160);
+  background-color: rgb(60, 98, 99);
   /* border-bottom: 1px rgb(95, 158, 160); */
   display: flex;
   box-shadow: 0 8px 8px rgba(95, 158, 160);
   width: 100%;
+  color: white;
+  min-width: max-content;
+  
+}
+
+.navbar h2{
+  margin: 10px 0px 50px 10px;
+}
+
+nav{
+  margin: 0px;
+  display: flex;
+
+}
+
+nav .active{
+  font-size: 2.2rem;
 }
 
 nav ul li {
   list-style: none;
   display: inline-block;
-  padding: 50px 50px;
+  padding: 10px 50px;
   align-items: end;
   justify-content: right;
   align-items: end;
-  a{ color: #000000;}
-  
+
+  text-decoration: none;
+  a{ color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;}
    
 
 }
 
+nav a:hover{
+  text-decoration: underline;
+  color: rgb(195, 195, 195);
+  font-weight: bolder;
+}
 
 .data-table {
   border-radius:25px;

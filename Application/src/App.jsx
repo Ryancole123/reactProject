@@ -15,7 +15,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <div className='app-container'>
+    
     <nav className='navbar'>
       <h2>Estate agent system</h2>
 
@@ -28,6 +28,7 @@ function App() {
 
 
     </nav>
+    <div className='app-container'>
     <Routes>
           <Route path="/sellers" element={<Sellers/>}/>
           <Route path="/sellers" element={<Sellers/>}/>
