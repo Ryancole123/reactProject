@@ -246,8 +246,9 @@ const Properties = () => {
             show={showModal} 
             handleClose={() => setShowModal(false)}
             onPropertyAdded={fetchProperties} />
-            <Button onClick={() => setShowModal(true)}>Add Property</Button>
-            <br/><br/>
+            <Button className="btn btn-success" onClick={() => setShowModal(true)}>Add Property</Button>
+
+            <div className="filter-options">
             <select name="price" id="price"  className='dropdown' onChange={handlePriceChange} value={price}>
                 <option>All prices</option>
                 <option>£100,000.00 - £149,999.99</option>
@@ -293,34 +294,36 @@ const Properties = () => {
                 <option>Has no garden</option>
             </select>
 
-            <input type="button" value="Reset filter values" onClick={resetFilterValues}/>
-
+            
+            
+            </div>
+            <Button className="btn btn-secondary ml-5" onClick={resetFilterValues}>Reset filter values</Button>
+            <div className="all-properties">
             {filteredProperties.map((property) => 
                 <div> 
                     
                 <div className="properties-container">
                 
-                <img src={getPropertyImage(property.type)} className="property-images" alt="" />
-                <span className="address-card-amenities">
-                    <table className="property-table">
-                        <tr>
-                            <td><img src={"../src/resources/bedrooms.png"} className="property-icons" alt="" /></td>
-                            <td>{property.bedroom}</td>
-                        </tr>
-                        <tr>
-                            <td><img className="property-icons" src={"../src/resources/bathrooms.png"} alt="" /></td>
-                            <td>{property.bathroom}</td>
-                        </tr>
-                        <tr>
-                            <td><img className="property-icons" src={"../src/resources/garden.png"} alt="" /></td>
-                            <td>{hasGarden(property.garden)?"Yes":"No"}</td>
-                        </tr>
-                    </table>
-                    
-                    
-                </span>
-                    
-                
+                    <img src={getPropertyImage(property.type)} className="property-images" alt="" />
+                    <span className="address-card-amenities">
+                        <table className="property-table">
+                            <tr>
+                                <td><img src={"../src/resources/bedrooms.png"} className="property-icons" alt="" /></td>
+                                <td>{property.bedroom}</td>
+                            </tr>
+                            <tr>
+                                <td><img className="property-icons" src={"../src/resources/bathrooms.png"} alt="" /></td>
+                                <td>{property.bathroom}</td>
+                            </tr>
+                            <tr>
+                                <td><img className="property-icons" src={"../src/resources/garden.png"} alt="" /></td>
+                                <td>{hasGarden(property.garden)?"Yes":"No"}</td>
+                            </tr>
+                        </table>
+                        
+                        
+                    </span>
+                                
                 
 
             
@@ -334,7 +337,7 @@ const Properties = () => {
                     <br/>
                     {property.type}
                     <br/>
-                    {<b className={statusColourCheck(property)}>{property.status}</b>}
+                    <h5>{<b className={statusColourCheck(property)}>{property.status}</b>}</h5>
                 </div>
                     <div className="more-prop-info">
                         Property listed by {findSellerName(seller, property)}
@@ -348,7 +351,7 @@ const Properties = () => {
                 </div>
                 </div>
             )}
-            
+            </div>
             
         </div>
     )
