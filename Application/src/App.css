@@ -1,27 +1,6 @@
-/* Create three equal columns that float next to each other
-.column {
-  float: left;
-  width: 33.33%;
-}
-Clear floats after the columns
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less)
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-} */
-
-
-
 .app-container{
   border-radius: 25px;
   width: 80vw;
-  /* width: auto; */
   margin: 50px auto;
   margin-bottom: 100px ;
   min-height: fit-content;
@@ -29,14 +8,12 @@ Responsive layout - makes the three columns stack on top of each other instead o
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* box-shadow: 0 4px 8px rgba(95, 158, 160); */
 }
 
 .navbar{
   border-radius: 25px;
   height: 100px;
   background-color: rgb(60, 98, 99);
-  /* border-bottom: 1px rgb(95, 158, 160); */
   display: flex;
   box-shadow: 0 8px 8px rgba(95, 158, 160);
   width: 100%;
@@ -82,7 +59,6 @@ nav a:hover{
 
 .data-table {
   border-radius:25px;
-  /* border: 2px solid rgba(95, 158, 160); */
   overflow: auto;
   width: 100%;
   box-shadow: 0 8px 8px rgba(95, 158, 160);
@@ -90,7 +66,6 @@ nav a:hover{
 
 .data-table table {
   border-radius:20px;
-  /* border: 1px solid rgba(95, 158, 160); */
   height: 100%;
   width: 100%;
   table-layout: auto;
@@ -108,9 +83,7 @@ nav a:hover{
 
 .data-table th {
   border-radius:20px;
-  /* border: 1px solid #dededf; */
   background-color:rgba(95, 158, 160) ;
-  /* color: #000000; */
   padding: 5px;
   box-shadow: 0 8px 8px rgba(95, 158, 160)
   
@@ -118,9 +91,7 @@ nav a:hover{
 
 .data-table td {
   border: radius 20px;
-  /* border: 1px solid rgba(95, 158, 160); */
   background-color: rgb(255, 255, 255);
-  /* color: #000000; */
   padding: 1px;
   height: 20px;
   box-shadow: 0 4px 8px rgba(95, 158, 160)
@@ -151,46 +122,21 @@ nav a:hover{
 }
 .inputfield{ 
   border-radius:5px;
-
-  /* border: 1px solid rgba(95, 158, 160); */
-  /* background-color: rgb(255, 255, 255); */
   outline:none;
   padding: 5px;
   width: 96%;
   height:95%;
-  /* box-shadow: 0 8px 8px rgba(95, 158, 160)
-}
-   */
 }
 .headerline{
   text-align: center;
-  /* border-radius: 25%; */
-            /* padding: 150px 20px; */
-            font-size: 25px;
-            /* font-weight: 100; */
-            /* color: #ffffff; */
-            /* text-shadow:
-                -1px -1px 0 #000,
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000,
-                -1px 0px 0 #000,
-                1px 0px 0 #000,
-                0px -1px 0 #000,
-                0px 1px 0 #000; */
+  font-size: 25px;
   color: rgba(95, 158, 160)!important;
-  /* font-style: normal!important;
-  font-size: 25px! important;
-  */
-  box-shadow: 0 8px 8px rgba(95, 158, 160)
-    
+  box-shadow: 0 8px 8px rgba(95, 158, 160)  
 }
 
 
 .carousel{
   width: 650px;
-
-
 }
 
 .ending-para{

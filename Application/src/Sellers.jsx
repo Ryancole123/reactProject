@@ -56,7 +56,7 @@ const fetchSellers = () => {
 
         
         )}
-        {/* <Link to="/create-new-seller"><input type="button" className='submit-button' value="Add a new seller"/></Link> */}
+        
         <br/>
         <SellerModalForm 
             show={showModal} 
