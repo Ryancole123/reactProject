@@ -8,8 +8,6 @@ import Register from './Register'
 import SellerForm from './SellerForm'
 import PropertyForm from './PropertyForm'
 import 'bootstrap/dist/css/bootstrap.css';
-import HomepageCarousel from './HomepageCarousel'
-import Carousel from 'react-bootstrap/Carousel';
 import Homepage from './Pages/Homepage'
 
 
