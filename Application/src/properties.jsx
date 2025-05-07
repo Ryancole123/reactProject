@@ -1,12 +1,9 @@
 import { useState,useEffect } from "react"
-import { Link } from "react-router-dom"
 import "./properties.css"
 import PropertyModalForm from "./PropertyForm"
 import { Button } from "react-bootstrap"
-import detachedImage from "../src/resources/detached.jpg";
-import semiDetachedImage from "../src/resources/semi-detached.jpg";
-import apartmentImage from "../src/resources/apartment.jpg";
-import defaultPropertyImage from "../src/resources/default-property.jpg";
+import PropertyImageCarousel from "./PropertyImageCarousel";
+
 
 const Properties = () => {
     const [showModal, setShowModal] = useState(false);
@@ -21,20 +18,7 @@ const Properties = () => {
     const [bathrooms, setBathrooms] = useState("Any number of bathrooms")
     const [garden, setGarden] = useState("No garden preference")
     const hasGarden=(property)=>property ===1 
-    const getPropertyImage = (propertyType)=> {const typeUpper = String(propertyType).toUpperCase();
-
-        switch (typeUpper){
-            case "DETACHED":
-                return detachedImage;
-            case "SEMI-DETACHED":
-                return semiDetachedImage;
-            case "APARTMENT":
-                return apartmentImage;
-            default:
-                return defaultPropertyImage;
-        }
-    };
-
+    
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -298,7 +282,8 @@ const Properties = () => {
                     
                 <div className="properties-container">
                 
-                    <img src={getPropertyImage(property.type)} className="property-images" alt="" />
+                    
+                    <PropertyImageCarousel propertyType={property.type}/>
                     <span className="address-card-amenities">
                         <table className="property-table">
                             <tr>
