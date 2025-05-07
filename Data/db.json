@@ -64,19 +64,6 @@
       "buyerId": 3
     },
     {
-      "id": "2",
-      "address": "Somewhere House, Some Street, Some City",
-      "postcode": "SO1 2ME",
-      "type": "APARTMENT",
-      "price": 200000,
-      "bedroom": 1,
-      "bathroom": 1,
-      "garden": 0,
-      "sellerId": "1",
-      "status": "SOLD",
-      "buyerId": 3
-    },
-    {
       "id": "8342",
       "address": "76 House Street, Swansea",
       "postcode": "SA8 9AX",
