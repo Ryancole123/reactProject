@@ -78,9 +78,9 @@ const Properties = () => {
 
     function withdrawFunction(prop){
         if(prop.status === "WITHDRAWN"){
-            return <input type="button" value="Resubmit this property" onClick={() => changePropertyStatus(prop)} />
+            return <Button variant="outline-primary" onClick={() => changePropertyStatus(prop)}><b>Resubmit this property</b></Button>
         }else if(prop.status === "FOR SALE"){
-            return <input type="button" value="Withdraw this property"  onClick={() => changePropertyStatus(prop)}/>
+            return <Button variant="outline-info" onClick={() => changePropertyStatus(prop)}><b>Withdraw this property</b></Button>
         }
     }
 
