@@ -142,7 +142,7 @@ function PropertyModalForm({ show, handleClose, onPropertyAdded }) {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-        <Button variant="primary" onClick={postToJSON}>Submit</Button>
+        <Button className='btn btn-success' variant="primary" onClick={postToJSON}>Submit</Button>
       </Modal.Footer>
     </Modal>
   );

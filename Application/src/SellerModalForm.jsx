@@ -46,9 +46,9 @@ let SellerModalForm = ({show, handleClose, onSellerAdded}) => {
 
     return(
         <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
+    <Modal.Header closeButton>
         <Modal.Title>New Seller</Modal.Title>
-      </Modal.Header>
+    </Modal.Header>
         <Modal.Body>
             <Form>
                 <Form.Group>
@@ -75,11 +75,11 @@ let SellerModalForm = ({show, handleClose, onSellerAdded}) => {
         </Modal.Body>
 
 
-      <Modal.Footer>
+    <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-        <Button variant="primary" onClick={postToJSON}>Submit</Button>
-      </Modal.Footer>
-      </Modal>
+        <Button className='btn btn-success' variant="primary" onClick={postToJSON}>Submit</Button>
+    </Modal.Footer>
+    </Modal>
 
     )
 

@@ -53,7 +53,6 @@ let Buyers = () => {
         
              </tr>
              )}
-             {/* <Link to="/create-new-buyer"><input type="button" className='submit-button' value="Add a new Buyer"/></Link> */}
              <BuyerModalForm 
             show={showModal} 
             handleClose={() => setShowModal(false)}
