@@ -3,90 +3,50 @@
     {
       "firstName": "Jade",
       "surname": "Song",
-      "address": "Sichuan, China",
-      "postcode": "1131321",
-      "phone": "",
+      "address": "Burnley, England",
+      "postcode": "BB1 8AX",
+      "phone": "07854698531",
       "id": "1"
     },
     {
-      "firstName": "Nicohola",
-      "surname": "Green",
-      "address": "Fairwater, Cardiff",
-      "postcode": "CF1 1AA",
-      "phone": "1234234",
-      "id": "2"
+      "id": "94a5",
+      "firstName": "Walter",
+      "surname": "White",
+      "address": "Albuquerque, NM",
+      "postcode": "87104",
+      "phone": "07448563259"
     },
     {
-      "id": "57cf",
+      "id": "c03d",
+      "firstName": "Dave",
+      "surname": "Jones",
+      "address": "42 Some Street, Newcastle",
+      "postcode": "NE8 6NJ",
+      "phone": "07965821157"
+    },
+    {
+      "id": "4932",
+      "firstName": "John",
+      "surname": "Doe",
+      "address": "48 John Doe Street, Liverpool",
+      "postcode": "L36 4AG",
+      "phone": "07449858571"
+    },
+    {
+      "id": "6a75",
+      "firstName": "Jane",
+      "surname": "Doe",
+      "address": "92 Jane Doe Street, Leeds",
+      "postcode": "LS12 6PG",
+      "phone": "07116458730"
+    },
+    {
+      "id": "f1c9",
       "firstName": "Ryan",
       "surname": "Cole",
-      "address": "XXX",
-      "postcode": "POR219",
-      "phone": "078412"
-    },
-    {
-      "id": "5581",
-      "firstName": "Paul",
-      "surname": "Blart",
-      "address": "Mall",
-      "postcode": "FY4 9DE",
-      "phone": "911"
-    },
-    {
-      "id": "e469",
-      "firstName": "Elyas",
-      "surname": "Musa",
-      "address": "HELLO",
-      "postcode": "HELLO",
-      "phone": ""
-    },
-    {
-      "id": "c303",
-      "firstName": "Test",
-      "surname": "Case",
-      "address": "AA",
-      "postcode": "BB",
-      "phone": "CC"
-    },
-    {
-      "id": "4143",
-      "firstName": "TestCase",
-      "surname": "2",
-      "address": "AA",
-      "postcode": "bb",
-      "phone": "cc"
-    },
-    {
-      "id": "0fec",
-      "firstName": "Ryan",
-      "surname": "Cole",
-      "address": "Swansea",
-      "postcode": "SA1 1AA",
-      "phone": ""
-    },
-    {
-      "id": "8444",
-      "firstName": "testCase",
-      "surname": "caseTest",
-      "address": "123",
-      "postcode": "456",
-      "phone": "789"
-    },
-    {
-      "id": "a5ff",
-      "firstName": "Name",
-      "surname": "Surname",
-      "address": "29 Address Street",
-      "postcode": "AA1 1AA",
-      "phone": "000"
-    },
-    {
-      "id": "50c4",
-      "firstName": "dave",
-      "surname": "jone",
-      "address": "32 one street",
-      "postcode": "ls34 5tr",
-      "phone": "12345678901"
+      "address": "Swansea, Wales",
+      "postcode": "SA11 1AB",
+      "phone": "07882010368"
     }
   ],
   "property": [
@@ -117,234 +77,122 @@
       "buyerId": 3
     },
     {
-      "id": "da33",
-      "address": "C",
-      "postcode": "C",
-      "type": "DETACHED",
-      "price": 175000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "5581",
-      "buyer": "",
-      "status": "FOR SALE",
-      "sellerId": "5581"
-    },
-    {
-      "id": "a693",
-      "address": "Test",
-      "postcode": "Street",
-      "type": "APARTMENT",
-      "price": 400000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "e469",
-      "buyer": "",
-      "status": "WITHDRAWN",
-      "sellerId": "e469"
-    },
-    {
-      "id": "f3fh",
-      "address": "",
-      "postcode": "",
-      "type": "DETACHED",
-      "price": 270000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "0fec",
-      "buyer": "",
-      "status": "WITHDRAWN",
-      "sellerId": "0fec"
-    },
-    {
-      "id": "55cb",
-      "address": "",
-      "postcode": "",
-      "type": "DETACHED",
-      "price": 350000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "50c4",
-      "buyer": "",
-      "status": "WITHDRAWN",
-      "sellerId": "50c4"
-    },
-    {
-      "id": "bdb4",
-      "address": "",
-      "postcode": "",
-      "type": "DETACHED",
-      "price": 375000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "1",
-      "buyer": "",
-      "status": "WITHDRAWN",
-      "sellerId": "1"
-    },
-    {
-      "id": "07df",
-      "address": "",
-      "postcode": "",
-      "type": "DETACHED",
-      "price": 295000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "5581",
-      "buyer": "",
-      "status": "WITHDRAWN",
-      "sellerId": "5581"
-    },
-    {
-      "id": "5986",
-      "address": "",
-      "postcode": "",
-      "type": "DETACHED",
-      "price": 315000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "a5ff",
-      "buyer": "",
-      "status": "SOLD",
-      "sellerId": "a5ff"
-    },
-    {
-      "id": "f3ff",
-      "address": "",
-      "postcode": "",
-      "type": "DETACHED",
-      "price": 675000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "0fec",
-      "buyer": "",
-      "status": "WITHDRAWN",
-      "sellerId": "0fec"
-    },
-    {
-      "id": "da13",
-      "address": "C",
-      "postcode": "C",
-      "type": "DETACHED",
-      "price": 325000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "5581",
-      "buyer": "",
-      "status": "WITHDRAWN",
-      "sellerId": "5581"
-    },
-    {
-      "id": "9",
-      "address": "",
-      "postcode": "",
-      "type": "DETACHED",
-      "price": 265000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "1",
-      "buyer": "",
-      "status": "WITHDRAWN",
-      "sellerId": "1"
-    },
-    {
-      "id": "07dg",
-      "address": "",
-      "postcode": "",
+      "id": "8342",
+      "address": "76 House Street, Swansea",
+      "postcode": "SA8 9AX",
       "type": "SEMI-DETACHED",
-      "price": 390000,
-      "bedroom": "",
-      "bathroom": "",
-      "garden": 1,
-      "seller": "5581",
-      "buyer": "",
-      "status": "WITHDRAWN",
-      "sellerId": "5581"
-    },
-    {
-      "id": "131e",
-      "address": "DB TEST",
-      "postcode": "DB TEST",
-      "type": "DETACHED",
-      "price": 500000,
-      "bedroom": 4,
+      "price": 375000,
+      "bedroom": 2,
       "bathroom": 3,
       "garden": 1,
-      "seller": "57cf",
+      "seller": "94a5",
       "buyer": "",
       "status": "FOR SALE",
-      "sellerId": "57cf"
+      "sellerId": "94a5"
     },
     {
-      "id": "fc69",
-      "address": "hello there",
-      "postcode": "SA1 1AA",
-      "type": "SEMI-DETACHED",
-      "price": 500000,
-      "bedroom": 3,
-      "bathroom": 4,
-      "garden": 1,
-      "seller": "5581",
-      "buyer": "",
-      "status": "FOR SALE",
-      "sellerId": "5581"
-    },
-    {
-      "id": "e027",
-      "address": "X",
-      "postcode": "Y",
+      "id": "1b60",
+      "address": "35 Kensington Street, London",
+      "postcode": "W8 5NX",
       "type": "APARTMENT",
-      "price": 400000,
-      "bedroom": 3,
+      "price": 520000,
+      "bedroom": 2,
       "bathroom": 2,
       "garden": 0,
-      "seller": "57cf",
+      "seller": "4932",
+      "buyer": "",
+      "status": "WITHDRAWN",
+      "sellerId": "4932"
+    },
+    {
+      "id": "3e96",
+      "address": "Chelsea Street",
+      "postcode": "CH1 5JQ",
+      "type": "SEMI-DETACHED",
+      "price": 180000,
+      "bedroom": 2,
+      "bathroom": 2,
+      "garden": 1,
+      "seller": "f1c9",
       "buyer": "",
       "status": "FOR SALE",
-      "sellerId": "57cf"
+      "sellerId": "f1c9"
+    },
+    {
+      "id": "0a82",
+      "address": "Old Trafford",
+      "postcode": "M12 7AB",
+      "type": "SEMI-DETACHED",
+      "price": 220000,
+      "bedroom": 3,
+      "bathroom": 2,
+      "garden": 1,
+      "seller": "c03d",
+      "buyer": "",
+      "status": "FOR SALE",
+      "sellerId": "c03d"
+    },
+    {
+      "id": "5d76",
+      "address": "Anfield, Anfield Road",
+      "postcode": "L1 3PE",
+      "type": "APARTMENT",
+      "price": 300000,
+      "bedroom": 3,
+      "bathroom": 2,
+      "garden": 1,
+      "seller": "6a75",
+      "buyer": "",
+      "status": "FOR SALE",
+      "sellerId": "6a75"
+    },
+    {
+      "id": "e16a",
+      "address": "23 St. David's Street",
+      "postcode": "CF12 7JB",
+      "type": "DETACHED",
+      "price": 375000,
+      "bedroom": 3,
+      "bathroom": 3,
+      "garden": 1,
+      "seller": "c03d",
+      "buyer": "",
+      "status": "WITHDRAWN",
+      "sellerId": "c03d"
     }
   ],
   "buyer": [
     {
       "id": "1",
       "firstName": "Cookie",
-      "surname": "Cat",
+      "surname": "Squirrel",
       "address": "42 Pen-y-lan Road, Cardiff",
-      "postcode": "CA1 8RR",
-      "phone": ""
+      "postcode": "CF1 8RR",
+      "phone": "07886458587"
     },
     {
       "id": "2",
       "firstName": "Nilla",
-      "surname": "Cat",
+      "surname": "Zebra",
       "address": "100 Magor Road, Newport",
       "postcode": "NP1 2LL",
-      "phone": ""
+      "phone": "07556897135"
     },
     {
       "firstName": "Monty",
       "surname": "Dog",
       "address": "Very Rich Street, London",
-      "postcode": "W1",
-      "phone": "",
+      "postcode": "W1 9JT",
+      "phone": "07554823200",
       "id": "3"
     },
     {
       "id": "fd0b",
-      "firstName": "dave",
-      "surname": "jone",
-      "address": "32 one street",
-      "postcode": "",
-      "phone": ""
+      "firstName": "Dave",
+      "surname": "Jone",
+      "address": "32 One Street",
+      "postcode": "FY4 8AQ",
+      "phone": "07878126597"
     }
   ]
 }

@@ -28,7 +28,6 @@ const fetchSellers = () => {
     }, []);
 
 
-    //Comment test
     return(
         <>
         <h3 className='headerline'>List of our current sellers:</h3>
