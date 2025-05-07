@@ -1,10 +1,26 @@
 import { useEffect,useState } from "react";
-import{Link} from "react-router-dom"
-import Register from "./Register";
 import "./App.css"
+import { Button } from "react-bootstrap"
+import BuyerModalForm from "./BuyerModalForm";
+
 
 let Buyers = () => {
     const [Buyers,setBuyers] = useState([])
+
+    const [showModal, setShowModal] = useState(false);
+
+
+
+
+    const fetchBuyers = () => {
+        fetch("http://localhost:3000/buyer")
+            .then((response) => response.json())
+            .then((data) => setBuyers(data));
+    };
+    
+        useEffect(() => {
+            fetchBuyers();
+        }, []);
 
     useEffect(() => {
         fetch("http://localhost:3000/buyer")
@@ -14,9 +30,9 @@ let Buyers = () => {
 
        return(
         <>
-        <h3 className='headerline'> List of our current buyers:</h3>
+        <h3 className='headerline'> List of our current buyers</h3>
 
-        <table border = "1"className= 'data-table'> 
+        <table className= 'data-table'> 
             <thead>
                 <tr>
                     <th>Buyer Name</th>
@@ -37,8 +53,15 @@ let Buyers = () => {
         
              </tr>
              )}
-             <Link to="/create-new-buyer"><input type="button" className='submit-button' value="Add a new Buyer"/></Link>
+             <BuyerModalForm 
+            show={showModal} 
+            handleClose={() => setShowModal(false)}
+            onBuyerAdded={fetchBuyers} />
+            <br/>
+            <Button onClick={() => setShowModal(true)}>Add new buyer</Button>
+
             </tbody>
+            <br/>
         </table>
          
 

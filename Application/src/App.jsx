@@ -1,49 +1,49 @@
 
 import './App.css'
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Link, NavLink} from 'react-router-dom'
 import Sellers from './Sellers'
 import Buyers  from './buyers'
 import Properties from './properties'
-import Register from './Register'
-import SellerForm from './SellerForm'
 import PropertyForm from './PropertyForm'
+import 'bootstrap/dist/css/bootstrap.css';
+import Homepage from './Pages/Homepage'
+
 
 function App() {
 
-// comment 
   return (
-    <>
     <BrowserRouter>
-    <div className='app-container'>
+    <>
+    
+    
     <nav className='navbar'>
-      <h2>System</h2>
+
+      <h3>Home Sweet Home</h3>
+
 
         <ul>
-          <li><Link to="/sellers">Sellers</Link></li>
-          <li><Link to="/properties">Properties</Link></li>
-          <li><Link to="/buyers">Buyers</Link></li>
-          <li><Link to="/">Home</Link></li>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/sellers">Sellers</NavLink></li>
+          <li><NavLink to="/properties">Properties</NavLink></li>
+          <li><NavLink to="/buyers">Buyers</NavLink></li>
         </ul>
 
 
     </nav>
+    <div className='app-container'>
     <Routes>
-          <Route path="/sellers" element={<Sellers/>}/>
+          <Route path="/" element={<Homepage/>}/>
           <Route path="/sellers" element={<Sellers/>}/>
           <Route path="/properties" element={<Properties/>}/>
           <Route path="/buyers" element={<Buyers/>}/>
-          <Route path="/create-new-seller" element={<SellerForm/>}/>
-          <Route path="/create-new-buyer" element={<Register/>}/>
           <Route path="/create-new-property" element={<PropertyForm/>} />
         </Routes>
     
 
-    
 
     </div>
-    </BrowserRouter>
     </>
+    </BrowserRouter>
   )
 }
-
 export default App

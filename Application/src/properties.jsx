@@ -1,12 +1,18 @@
 import { useState,useEffect } from "react"
 import { Link } from "react-router-dom"
+import "./properties.css"
+import PropertyModalForm from "./PropertyForm"
+import { Button } from "react-bootstrap"
 import detachedImage from "../src/resources/detached.jpg";
 import semiDetachedImage from "../src/resources/semi-detached.jpg";
 import apartmentImage from "../src/resources/apartment.jpg";
 import defaultPropertyImage from "../src/resources/default-property.jpg";
-import "./properties.css"
 
 const Properties = () => {
+    const [showModal, setShowModal] = useState(false);
+
+
+    
     const [properties, setProperties] = useState([])
     const [seller, setSeller] = useState([])
     const [price, setPrice] = useState("All prices")
@@ -17,18 +23,20 @@ const Properties = () => {
     const hasGarden=(property)=>property ===1 
     const getPropertyImage = (propertyType)=> {const typeUpper = String(propertyType).toUpperCase();
 
-    switch (typeUpper){
-        case "DETACHED":
-            return detachedImage;
-        case "SEMI-DETACHED":
-            return semiDetachedImage;
-        case "APARTMENT":
-            return apartmentImage;
-        default:
-            return defaultPropertyImage;
-    }
-};
-        function numberWithCommas(x) {
+        switch (typeUpper){
+            case "DETACHED":
+                return detachedImage;
+            case "SEMI-DETACHED":
+                return semiDetachedImage;
+            case "APARTMENT":
+                return apartmentImage;
+            default:
+                return defaultPropertyImage;
+        }
+    };
+
+
+    function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
@@ -39,7 +47,8 @@ const Properties = () => {
             return "WITHDRAWN"
         }else{return "SOLD"}
     }
-    // hello
+
+
     function changePropertyStatus(prop){
         const updatedProperty = {...prop};
         if(prop.status === "FOR SALE"){
@@ -69,9 +78,9 @@ const Properties = () => {
 
     function withdrawFunction(prop){
         if(prop.status === "WITHDRAWN"){
-            return <input type="button" value="Resubmit this property" onClick={() => changePropertyStatus(prop)} />
+            return <Button variant="outline-primary" onClick={() => changePropertyStatus(prop)}><b>Resubmit this property</b></Button>
         }else if(prop.status === "FOR SALE"){
-            return <input type="button" value="Withdraw this property"  onClick={() => changePropertyStatus(prop)}/>
+            return <Button variant="outline-info" onClick={() => changePropertyStatus(prop)}><b>Withdraw this property</b></Button>
         }
     }
 
@@ -190,9 +199,6 @@ const Properties = () => {
         }
     }
 
-    // console.log(matchesTypeSelection);
-    
-    //comment
     const filteredProperties = properties.filter(
         (property) =>
             matchesPriceSelection(property, price) &&
@@ -200,16 +206,17 @@ const Properties = () => {
             matchesBedroomsSelection(property, bedrooms) &&
             matchesBathroomSelection(property, bathrooms) &&
             matchesGardenSelection(property, garden)
-    )
-
-    // console.log(filteredProperties);
-    
+    )  
     
 
-    useEffect(() => {
+    const fetchProperties = () => {
         fetch("http://localhost:3000/property")
             .then((response) => response.json())
             .then((data) => setProperties(data));
+    };
+    
+    useEffect(() => {
+        fetchProperties();
     }, []);
 
     useEffect(() => {
@@ -221,7 +228,6 @@ const Properties = () => {
     function findSellerName(sellers,props){
         let nameOfSeller = sellers.find((s) => s.id === props.sellerId)
             
-        //console.log(nameOfSeller);
         return nameOfSeller ? `${nameOfSeller.firstName}  ${nameOfSeller.surname}` : "Unknown Seller"        
         
     }
@@ -229,9 +235,14 @@ const Properties = () => {
 
     return (
         <div>
-            <h2 className='headerline'> List Of Properties of :</h2>
-            <Link to="/create-new-property"><input type="button" className='submit-button' value="Add a new property"/></Link>
-            <br/><br/>
+            <h2> List Of Properties of :</h2>
+            <PropertyModalForm 
+            show={showModal} 
+            handleClose={() => setShowModal(false)}
+            onPropertyAdded={fetchProperties} />
+            <Button className="btn btn-success" onClick={() => setShowModal(true)}>Add Property</Button>
+
+            <div className="filter-options">
             <select name="price" id="price"  className='dropdown' onChange={handlePriceChange} value={price}>
                 <option>All prices</option>
                 <option>£100,000.00 - £149,999.99</option>
@@ -269,7 +280,7 @@ const Properties = () => {
                 <option>7</option>
             </select>
 
-         
+        
             
             <select name="garden" id="garden" className='dropdown' onChange={handleGardenChange} value={garden}>
                 <option>No garden preference</option>
@@ -277,38 +288,36 @@ const Properties = () => {
                 <option>Has no garden</option>
             </select>
 
-            <input type="button" className='submit-button' value="Reset filter values" onClick={resetFilterValues}/>
-
+            
+            
+            </div>
+            <Button className="btn btn-secondary ml-5" onClick={resetFilterValues}>Reset filter values</Button>
+            <div className="all-properties">
             {filteredProperties.map((property) => 
                 <div> 
-                    <br />
+                    
                 <div className="properties-container">
                 
-                <img 
-                    src={getPropertyImage(property.type)}
-                    className="property-images"
-                    alt={`${property.type || "Property"} at ${property.address}`} 
-                />
-                <span className="address-card-amenities">
-                    <table className="property-table">
-                        <tr>
-                            <td><img src={"../src/resources/bedrooms.png"} className="property-icons" alt="" /></td>
-                            <td>{property.bedroom}</td>
-                        </tr>
-                        <tr>
-                            <td><img className="property-icons" src={"../src/resources/bathrooms.png"} alt="" /></td>
-                            <td>{property.bathroom}</td>
-                        </tr>
-                        <tr>
-                            <td><img className="property-icons" src={"../src/resources/garden.png"} alt="" /></td>
-                            <td>{hasGarden(property.garden)?"Yes":"No"}</td>
-                        </tr>
-                    </table>
-                    
-                    
-                </span>
-                    
-                
+                    <img src={getPropertyImage(property.type)} className="property-images" alt="" />
+                    <span className="address-card-amenities">
+                        <table className="property-table">
+                            <tr>
+                                <td><img src={"../src/resources/bedrooms.png"} className="property-icons" alt="" /></td>
+                                <td>{property.bedroom}</td>
+                            </tr>
+                            <tr>
+                                <td><img className="property-icons" src={"../src/resources/bathrooms.png"} alt="" /></td>
+                                <td>{property.bathroom}</td>
+                            </tr>
+                            <tr>
+                                <td><img className="property-icons" src={"../src/resources/garden.png"} alt="" /></td>
+                                <td>{hasGarden(property.garden)?"Yes":"No"}</td>
+                            </tr>
+                        </table>
+                        
+                        
+                    </span>
+                                
                 
 
             
@@ -322,7 +331,7 @@ const Properties = () => {
                     <br/>
                     {property.type}
                     <br/>
-                    {<b className={statusColourCheck(property)}>{property.status}</b>}
+                    <h5>{<b className={statusColourCheck(property)}>{property.status}</b>}</h5>
                 </div>
                     <div className="more-prop-info">
                         Property listed by {findSellerName(seller, property)}
@@ -336,7 +345,7 @@ const Properties = () => {
                 </div>
                 </div>
             )}
-            
+            </div>
             
         </div>
     )
