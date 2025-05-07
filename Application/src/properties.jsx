@@ -47,7 +47,8 @@ const Properties = () => {
             return "WITHDRAWN"
         }else{return "SOLD"}
     }
-    // hello
+
+
     function changePropertyStatus(prop){
         const updatedProperty = {...prop};
         if(prop.status === "FOR SALE"){
@@ -77,9 +78,9 @@ const Properties = () => {
 
     function withdrawFunction(prop){
         if(prop.status === "WITHDRAWN"){
-            return <input type="button" value="Resubmit this property" onClick={() => changePropertyStatus(prop)} />
+            return <Button variant="outline-primary" onClick={() => changePropertyStatus(prop)}><b>Resubmit this property</b></Button>
         }else if(prop.status === "FOR SALE"){
-            return <input type="button" value="Withdraw this property"  onClick={() => changePropertyStatus(prop)}/>
+            return <Button variant="outline-info" onClick={() => changePropertyStatus(prop)}><b>Withdraw this property</b></Button>
         }
     }
 
@@ -198,9 +199,6 @@ const Properties = () => {
         }
     }
 
-    // console.log(matchesTypeSelection);
-    
-    //comment
     const filteredProperties = properties.filter(
         (property) =>
             matchesPriceSelection(property, price) &&
@@ -208,10 +206,7 @@ const Properties = () => {
             matchesBedroomsSelection(property, bedrooms) &&
             matchesBathroomSelection(property, bathrooms) &&
             matchesGardenSelection(property, garden)
-    )
-
-    // console.log(filteredProperties);
-    
+    )  
     
 
     const fetchProperties = () => {
@@ -233,7 +228,6 @@ const Properties = () => {
     function findSellerName(sellers,props){
         let nameOfSeller = sellers.find((s) => s.id === props.sellerId)
             
-        //console.log(nameOfSeller);
         return nameOfSeller ? `${nameOfSeller.firstName}  ${nameOfSeller.surname}` : "Unknown Seller"        
         
     }
@@ -286,7 +280,7 @@ const Properties = () => {
                 <option>7</option>
             </select>
 
-         
+        
             
             <select name="garden" id="garden" className='dropdown' onChange={handleGardenChange} value={garden}>
                 <option>No garden preference</option>

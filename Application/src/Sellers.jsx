@@ -28,7 +28,6 @@ const fetchSellers = () => {
     }, []);
 
 
-    //Comment test
     return(
         <>
         <h3 className='headerline'>List of our current sellers:</h3>
@@ -56,7 +55,7 @@ const fetchSellers = () => {
 
         
         )}
-        {/* <Link to="/create-new-seller"><input type="button" className='submit-button' value="Add a new seller"/></Link> */}
+        
         <br/>
         <SellerModalForm 
             show={showModal} 
